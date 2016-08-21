@@ -110,6 +110,9 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
   visibility: hidden;
   opacity: 0; }
 
+.hidden-data {
+  display: none; }
+
 .fixed {
   position: fixed;
   z-index: 10;
@@ -858,8 +861,8 @@ u {
       padding: 0 4px;
       cursor: pointer; }
   .partner-slideshow-wrapper img {
-    height: 80px;
-    padding: 2rem; }
+    height: 90px;
+    padding: 0.5em 0.5em; }
 
 /*----------------------------------------------------------------*/
 /*  VIDEO
