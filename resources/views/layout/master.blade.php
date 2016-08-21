@@ -85,6 +85,85 @@
 
 
 @yield('content')
+    <div id="model-image-popover" class="model-image-popover clear-fix" >
+        <div id="model-image-popover-info">
+            <div id="model-info" class="model-info">
+                <div class="model-info-inner clear-fix">
+                    <div class="model-info-header">
+                        <div class="model-info-model-name ng-binding">birthe harms</div>
+                    </div>
+
+                    <div class="model-info-col-1">
+                        <div class="model-info-detail">
+                            <span class="model-detail-label">Height</span>
+                            <span class="model-detail-value ng-binding" ng-bind="imagePopover.model.height.name || '- - -'">180 cm/5'11"</span>
+                        </div>
+                        <div class="model-info-detail">
+                            <span class="model-detail-label">Bust</span>
+                            <span class="model-detail-value ng-binding" ng-bind="imagePopover.model.bust.name || '- - -'">77 cm/30.5"</span>
+                        </div>
+                        <div class="model-info-detail">
+                            <span class="model-detail-label">Waist</span>
+                            <span class="model-detail-value ng-binding" ng-bind="imagePopover.model.waist.name || '- - -'">60 cm/23.5"</span>
+                        </div>
+                        <div class="model-info-detail">
+                            <span class="model-detail-label">Hip</span>
+                            <span class="model-detail-value ng-binding" ng-bind="imagePopover.model.hip.name || '- - -'">89 cm/35"</span>
+                        </div>
+                    </div>
+
+                    <div class="model-info-col-2">
+                        <div class="model-info-detail">
+                            <span class="model-detail-label">Dress</span>
+                            <span class="model-detail-value ng-binding" ng-bind="imagePopover.model.dress.name || '- - -'">34 eu/4 us/6 uk</span>
+                        </div>
+                        <div class="model-info-detail">
+                            <span class="model-detail-label">Shoes</span>
+                            <span class="model-detail-value ng-binding" ng-bind="imagePopover.model.shoes.name || '- - -'">42 EU/11 US/7.5 UK</span>
+                        </div>
+                        <div class="model-info-detail">
+                            <span class="model-detail-label">Hair</span>
+                            <span class="model-detail-value ng-binding" ng-bind="imagePopover.model.hair.name || '- - -'">Darkblond</span>
+                        </div>
+                        <div class="model-info-detail">
+                            <span class="model-detail-label">Eyes</span>
+                            <span class="model-detail-value ng-binding" ng-bind="imagePopover.model.eyes.name || '- - -'">Blue/Green</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div id="model-image-popover-grid">
+            <div class="model-image-popover-shadow-mask-1"></div>
+            <div class="model-image-popover-shadow-mask-2"></div>
+
+            <div class="grid-model-image-popover clearfix">
+                <div class="grid-model-image-popover-column clearfix" >
+                    <div class="grid-item">
+                        <img src="{{asset('assets/images/model_4.jpg')}}">
+                    </div>
+                    <div class="grid-item">
+                        <img src="{{asset('assets/images/model_3.jpg')}}">
+                    </div>
+                </div>
+                <div class="grid-model-image-popover-column clearfix" >
+                    <div class="grid-item">
+                        <img src="{{asset('assets/images/model_1.jpg')}}">
+                    </div>
+                    <div class="grid-item">
+                        <img src="{{asset('assets/images/model_2.jpg')}}">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
     <div class="shadow"></div>
     <div class="footer parallax full-width" style="background-position: 50% 200px;">
         <div class="footer-inner">

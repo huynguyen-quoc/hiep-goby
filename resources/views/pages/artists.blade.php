@@ -98,12 +98,12 @@
             targetEl.css({'z-index':29});
 
             window.showPopoverTimeout=window.setTimeout(function(){$('#model-image-popover').hide().fadeIn(100);}, 250);
-        }
+        };
 
         var hidePopover = function(event){
             window.clearTimeout(window.showPopoverTimeout);
             $('#model-image-popover').fadeOut(100);
-        }
+        };
 
         $(function () {
             $('body').toggleClass('artists');

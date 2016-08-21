@@ -10,177 +10,399 @@
                 <div class="icon-label">Loading</div>
             </div>
         </div>
-        <div class="grid-masonry grid-model-list">
+        <div class="grid-masonry">
             <div class="grid-column-size"></div>
             <div class="masonry-brick">
-                <article class="image grid-item">
-                    <div class="model-img-wrapper">
-                        <a>
-                            <img src="{{asset('assets/images/details/1.jpg')}}"  >
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="image grid-item">
-                    <div class="model-img-wrapper">
-                        <a >
-                            <img src="{{asset('assets/images/details/2.jpg')}}"  >
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="image grid-item">
-                    <div class="model-img-wrapper">
-                        <a >
-                            <img src="{{asset('assets/images/details/3.jpg')}}"  >
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="image grid-item">
-                    <div class="model-img-wrapper">
-                        <a >
-                            <img src="{{asset('assets/images/details/4.jpg')}}"  >
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="image grid-item">
-                    <div class="model-img-wrapper">
-                        <a >
-                            <img src="{{asset('assets/images/details/5.jpg')}}"  >
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="image grid-item">
-                    <div class="model-img-wrapper">
-                        <a >
-                            <img src="{{asset('assets/images/details/6.jpg')}}"  >
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="image grid-item">
-                    <div class="model-img-wrapper">
-                        <a >
-                            <img src="{{asset('assets/images/details/7.jpg')}}"  >
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="image grid-item">
-                    <div class="model-img-wrapper">
-                        <a >
-                            <img src="{{asset('assets/images/details/8.jpg')}}"  >
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="image grid-item">
-                    <div class="model-img-wrapper">
-                        <a >
-                            <img src="{{asset('assets/images/details/9.jpg')}}"  >
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="image grid-item">
-                    <div class="model-img-wrapper">
-                        <a >
-                            <img src="{{asset('assets/images/details/10.jpg')}}"  >
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="image grid-item">
-                    <div class="model-img-wrapper">
-                        <a >
-                            <img src="{{asset('assets/images/details/11.jpg')}}"  >
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="image grid-item">
-                    <div class="model-img-wrapper">
-                        <a >
-                            <img src="{{asset('assets/images/details/12.jpg')}}"  >
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="image grid-item">
-                    <div class="model-img-wrapper">
-                        <a >
-                            <img src="{{asset('assets/images/details/13.jpg')}}"  >
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="image grid-item">
-                    <div class="model-img-wrapper">
-                        <a >
-                            <img src="{{asset('assets/images/details/14.jpg')}}"  >
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="image grid-item">
-                    <div class="model-img-wrapper">
-                        <a >
-                            <img src="{{asset('assets/images/details/15.jpg')}}"  >
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="image grid-item">
-                    <div class="model-img-wrapper">
-                        <a >
-                            <img src="{{asset('assets/images/details/16.jpg')}}"  >
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="image grid-item">
-                    <div class="model-img-wrapper">
-                        <a >
-                            <img src="{{asset('assets/images/details/17.jpg')}}"  >
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="image grid-item">
-                    <div class="model-img-wrapper">
-                        <a >
-                            <img src="{{asset('assets/images/details/18.jpg')}}"  >
-                        </a>
-                    </div>
-                </article>
-            </div>
+                <article class="model grid-item">
+                    <a href="#" >
+                        <div class="model-img-wrapper model-background-img-wrapper"
+                             style="background-image: url({{ asset('assets/images/model_2.jpg')}})">
+                            <div class="model-name-box">
+                                <span class="model-name" data-name="Kim Ngan"></span>
+                            </div>
 
+                            <div class="wishlist-icon-wrapper in-wishlist" >
+                                <div class="">
+                                    <span class="model-is-active gobyArtIcon">D</span>
+                                    <span class="gobyArtIcon">S</span>
+                                </div>
+                            </div>
+
+                            <div class="wishlist-toggle-wrapper">
+                                <div class="in-wishlist">
+                                    <span class="icon-label s_hidden">Shortlist remove</span>
+                                    <span class="icon-label l_hidden m_hidden">Shortlist </span>
+                                    <span class="sofaIcon l_hidden m_hidden">D</span>
+                                </div>
+                                <div class="not-in-wishlist">
+                                    <span class="icon-label s_hidden">Add to shortlist</span>
+                                    <span class="icon-label l_hidden m_hidden">Shortlist +</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                    <div class="model-name-wrapper">
+                        <a href="#">
+                                <span class="model-name ">
+                                  Kim Ngan
+                                </span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            <div class="masonry-brick">
+                <article class="model grid-item wishlist">
+                    <a href="#" >
+                        <div class="model-img-wrapper model-background-img-wrapper"
+                             style="background-image: url({{ asset('assets/images/model_2.jpg')}})">
+                            <div class="model-name-box">
+                                <span class="model-name" data-name="Kim Ngan"></span>
+                            </div>
+
+                            <div class="wishlist-icon-wrapper in-wishlist" >
+                                <div class="">
+                                    <span class="model-is-active gobyArtIcon">D</span>
+                                    <span class="gobyArtIcon">S</span>
+                                </div>
+                            </div>
+
+                            <div class="wishlist-toggle-wrapper">
+                                <div class="in-wishlist">
+                                    <span class="icon-label s_hidden">Shortlist remove</span>
+                                    <span class="icon-label l_hidden m_hidden">Shortlist </span>
+                                    <span class="sofaIcon l_hidden m_hidden">D</span>
+                                </div>
+                                <div class="not-in-wishlist">
+                                    <span class="icon-label s_hidden">Add to shortlist</span>
+                                    <span class="icon-label l_hidden m_hidden">Shortlist +</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                    <div class="model-name-wrapper">
+                        <a href="#">
+                                <span class="model-name ">
+                                  Kim Ngan
+                                </span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            <div class="masonry-brick">
+                <article class="model grid-item">
+                    <a href="#" >
+                        <div class="model-img-wrapper model-background-img-wrapper"
+                             style="background-image: url({{ asset('assets/images/model_4.jpg')}})">
+                            <div class="model-name-box">
+                                <span class="model-name" data-name="Kim Ngan"></span>
+                            </div>
+
+                            <div class="wishlist-icon-wrapper in-wishlist" >
+                                <div class="">
+                                    <span class="model-is-active gobyArtIcon">D</span>
+                                    <span class="gobyArtIcon">S</span>
+                                </div>
+                            </div>
+
+                            <div class="wishlist-toggle-wrapper">
+                                <div class="in-wishlist">
+                                    <span class="icon-label s_hidden">Shortlist remove</span>
+                                    <span class="icon-label l_hidden m_hidden">Shortlist </span>
+                                    <span class="sofaIcon l_hidden m_hidden">D</span>
+                                </div>
+                                <div class="not-in-wishlist">
+                                    <span class="icon-label s_hidden">Add to shortlist</span>
+                                    <span class="icon-label l_hidden m_hidden">Shortlist +</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                    <div class="model-name-wrapper">
+                        <a href="#">
+                                <span class="model-name ">
+                                  Kim Ngan
+                                </span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            <div class="masonry-brick">
+                <article class="model grid-item">
+                    <a href="#" >
+                        <div class="model-img-wrapper model-background-img-wrapper"
+                             style="background-image: url({{ asset('assets/images/model_3.jpg')}})">
+                            <div class="model-name-box">
+                                <span class="model-name" data-name="Kim Ngan"></span>
+                            </div>
+
+                            <div class="wishlist-icon-wrapper in-wishlist" >
+                                <div class="">
+                                    <span class="model-is-active gobyArtIcon">D</span>
+                                    <span class="gobyArtIcon">S</span>
+                                </div>
+                            </div>
+
+                            <div class="wishlist-toggle-wrapper">
+                                <div class="in-wishlist">
+                                    <span class="icon-label s_hidden">Shortlist remove</span>
+                                    <span class="icon-label l_hidden m_hidden">Shortlist </span>
+                                    <span class="sofaIcon l_hidden m_hidden">D</span>
+                                </div>
+                                <div class="not-in-wishlist">
+                                    <span class="icon-label s_hidden">Add to shortlist</span>
+                                    <span class="icon-label l_hidden m_hidden">Shortlist +</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                    <div class="model-name-wrapper">
+                        <a href="#">
+                                <span class="model-name ">
+                                  Kim Ngan
+                                </span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            <div class="masonry-brick">
+                <article class="model grid-item">
+                    <a href="#" >
+                        <div class="model-img-wrapper model-background-img-wrapper"
+                             style="background-image: url({{ asset('assets/images/model_1.jpg')}})">
+                            <div class="model-name-box">
+                                <span class="model-name" data-name="Kim Ngan"></span>
+                            </div>
+
+                            <div class="wishlist-icon-wrapper in-wishlist" >
+                                <div class="">
+                                    <span class="model-is-active gobyArtIcon">D</span>
+                                    <span class="gobyArtIcon">S</span>
+                                </div>
+                            </div>
+
+                            <div class="wishlist-toggle-wrapper">
+                                <div class="in-wishlist">
+                                    <span class="icon-label s_hidden">Shortlist remove</span>
+                                    <span class="icon-label l_hidden m_hidden">Shortlist </span>
+                                    <span class="sofaIcon l_hidden m_hidden">D</span>
+                                </div>
+                                <div class="not-in-wishlist">
+                                    <span class="icon-label s_hidden">Add to shortlist</span>
+                                    <span class="icon-label l_hidden m_hidden">Shortlist +</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                    <div class="model-name-wrapper">
+                        <a href="#">
+                                <span class="model-name ">
+                                  Kim Ngan
+                                </span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            <div class="masonry-brick">
+                <article class="model grid-item">
+                    <a href="#" >
+                        <div class="model-img-wrapper model-background-img-wrapper"
+                             style="background-image: url({{ asset('assets/images/model_2.jpg')}})">
+                            <div class="model-name-box">
+                                <span class="model-name" data-name="Kim Ngan"></span>
+                            </div>
+
+                            <div class="wishlist-icon-wrapper in-wishlist" >
+                                <div class="">
+                                    <span class="model-is-active gobyArtIcon">D</span>
+                                    <span class="gobyArtIcon">S</span>
+                                </div>
+                            </div>
+
+                            <div class="wishlist-toggle-wrapper">
+                                <div class="in-wishlist">
+                                    <span class="icon-label s_hidden">Shortlist remove</span>
+                                    <span class="icon-label l_hidden m_hidden">Shortlist </span>
+                                    <span class="sofaIcon l_hidden m_hidden">D</span>
+                                </div>
+                                <div class="not-in-wishlist">
+                                    <span class="icon-label s_hidden">Add to shortlist</span>
+                                    <span class="icon-label l_hidden m_hidden">Shortlist +</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                    <div class="model-name-wrapper">
+                        <a href="#">
+                                <span class="model-name ">
+                                  Kim Ngan
+                                </span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            <div class="masonry-brick">
+                <article class="model grid-item">
+                    <a href="#" >
+                        <div class="model-img-wrapper model-background-img-wrapper"
+                             style="background-image: url({{ asset('assets/images/model_2.jpg')}})">
+                            <div class="model-name-box">
+                                <span class="model-name" data-name="Kim Ngan"></span>
+                            </div>
+
+                            <div class="wishlist-icon-wrapper in-wishlist" >
+                                <div class="">
+                                    <span class="model-is-active gobyArtIcon">D</span>
+                                    <span class="gobyArtIcon">S</span>
+                                </div>
+                            </div>
+
+                            <div class="wishlist-toggle-wrapper">
+                                <div class="in-wishlist">
+                                    <span class="icon-label s_hidden">Shortlist remove</span>
+                                    <span class="icon-label l_hidden m_hidden">Shortlist </span>
+                                    <span class="sofaIcon l_hidden m_hidden">D</span>
+                                </div>
+                                <div class="not-in-wishlist">
+                                    <span class="icon-label s_hidden">Add to shortlist</span>
+                                    <span class="icon-label l_hidden m_hidden">Shortlist +</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                    <div class="model-name-wrapper">
+                        <a href="#">
+                                <span class="model-name ">
+                                  Kim Ngan
+                                </span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            <div class="masonry-brick">
+                <article class="model grid-item">
+                    <a href="#" >
+                        <div class="model-img-wrapper model-background-img-wrapper"
+                             style="background-image: url({{ asset('assets/images/model_2.jpg')}})">
+                            <div class="model-name-box">
+                                <span class="model-name" data-name="Kim Ngan"></span>
+                            </div>
+
+                            <div class="wishlist-icon-wrapper in-wishlist" >
+                                <div class="">
+                                    <span class="model-is-active gobyArtIcon">D</span>
+                                    <span class="gobyArtIcon">S</span>
+                                </div>
+                            </div>
+
+                            <div class="wishlist-toggle-wrapper">
+                                <div class="in-wishlist">
+                                    <span class="icon-label s_hidden">Shortlist remove</span>
+                                    <span class="icon-label l_hidden m_hidden">Shortlist </span>
+                                    <span class="sofaIcon l_hidden m_hidden">D</span>
+                                </div>
+                                <div class="not-in-wishlist">
+                                    <span class="icon-label s_hidden">Add to shortlist</span>
+                                    <span class="icon-label l_hidden m_hidden">Shortlist +</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                    <div class="model-name-wrapper">
+                        <a href="#">
+                                <span class="model-name ">
+                                  Kim Ngan
+                                </span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            <div class="masonry-brick">
+                <article class="model grid-item">
+                    <a href="#" >
+                        <div class="model-img-wrapper model-background-img-wrapper"
+                             style="background-image: url({{ asset('assets/images/model_2.jpg')}})">
+                            <div class="model-name-box">
+                                <span class="model-name" data-name="Kim Ngan"></span>
+                            </div>
+
+                            <div class="wishlist-icon-wrapper in-wishlist" >
+                                <div class="">
+                                    <span class="model-is-active gobyArtIcon">D</span>
+                                    <span class="gobyArtIcon">S</span>
+                                </div>
+                            </div>
+
+                            <div class="wishlist-toggle-wrapper">
+                                <div class="in-wishlist">
+                                    <span class="icon-label s_hidden">Shortlist remove</span>
+                                    <span class="icon-label l_hidden m_hidden">Shortlist </span>
+                                    <span class="sofaIcon l_hidden m_hidden">D</span>
+                                </div>
+                                <div class="not-in-wishlist">
+                                    <span class="icon-label s_hidden">Add to shortlist</span>
+                                    <span class="icon-label l_hidden m_hidden">Shortlist +</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                    <div class="model-name-wrapper">
+                        <a href="#">
+                                <span class="model-name ">
+                                  Kim Ngan
+                                </span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            <div class="masonry-brick">
+                <article class="model grid-item">
+                    <a href="#" >
+                        <div class="model-img-wrapper model-background-img-wrapper"
+                             style="background-image: url({{ asset('assets/images/model_4.jpg')}})">
+                            <div class="model-name-box">
+                                <span class="model-name" data-name="Kim Ngan"></span>
+                            </div>
+
+                            <div class="wishlist-icon-wrapper in-wishlist" >
+                                <div class="">
+                                    <span class="model-is-active gobyArtIcon">D</span>
+                                    <span class="gobyArtIcon">S</span>
+                                </div>
+                            </div>
+
+                            <div class="wishlist-toggle-wrapper">
+                                <div class="in-wishlist">
+                                    <span class="icon-label s_hidden">Shortlist remove</span>
+                                    <span class="icon-label l_hidden m_hidden">Shortlist </span>
+                                    <span class="sofaIcon l_hidden m_hidden">D</span>
+                                </div>
+                                <div class="not-in-wishlist">
+                                    <span class="icon-label s_hidden">Add to shortlist</span>
+                                    <span class="icon-label l_hidden m_hidden">Shortlist +</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                    <div class="model-name-wrapper">
+                        <a href="#">
+                                <span class="model-name ">
+                                  Kim Ngan
+                                </span>
+                        </a>
+                    </div>
+                </article>
+            </div>
 
         </div>
-    </div>
-    <div class="text-center">
-        <a class="button-more" href="/models">
-            <span class="gobyArtIcon medium">F</span><br>Load More
-        </a>
     </div>
 </div>
