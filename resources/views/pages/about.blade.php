@@ -32,18 +32,26 @@
                 elBackgrounPos = "50% " + newPositionY;
                 el.css({backgroundPosition: elBackgrounPos});
             }
-        }
+        };
+        var $grid = $('.team-masonry').masonry({
+            columnWidth: '.grid-column-size',
+            itemSelector: '.masonry-brick',
+            percentPosition: true
+        });
+
+        var $grid2 = $('.event-masonry').masonry({
+            columnWidth: '.grid-column-size',
+            itemSelector: '.masonry-brick',
+            percentPosition: true
+        });
+
         $(function () {
             $('body').toggleClass('about');
-
+            $('.loader-container').toggleClass("active");
             scrollParallaxAboutImage();$(window).scroll (function() {scrollParallaxAboutImage();});
-            var $grid = $('.grid-masonry').masonry({
-                columnWidth: '.grid-column-size',
-                itemSelector: '.masonry-brick',
-                percentPosition: true
-            });
 
-            $grid.imagesLoaded().progress( function() {
+
+            $grid2.imagesLoaded().progress( function() {
                 $grid.masonry('layout');
             });
 

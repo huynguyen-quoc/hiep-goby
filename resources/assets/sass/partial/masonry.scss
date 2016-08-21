@@ -74,6 +74,7 @@
 
 
 .grid-masonry{
+
   .grid-item {
     position: relative;
     width: 100%;
@@ -82,6 +83,9 @@
   .masonry-brick {
     position:  relative;
     padding: 0.5% 0.5% 0.5% 0.5%;
+
+    .active {
+    }
   }
 }
 

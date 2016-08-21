@@ -3,15 +3,17 @@
         <div class="headbox">
             <span class="text_left text-uppercase">GOBY ART TEAM</span>
         </div>
-        <div class="loader-container" >
-            <div class="content">
-                <div class="gobyArtIcon spinner">S</div>
-                <div class="icon-label">Loading</div>
-            </div>
-        </div>
+
         <hr class="divider">
-        <div class="grid-masonry">
+        {{--<div id="team-loader" class="loader-container" >--}}
+            {{--<div class="content">--}}
+                {{--<div class="gobyArtIcon spinner">S</div>--}}
+                {{--<div class="icon-label">Loading</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+        <div class="grid-masonry team-masonry" >
             <div class="grid-column-size"></div>
+
             <div class="masonry-brick">
                 <article class="team grid-item">
                     <a href="#" >

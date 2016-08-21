@@ -3,14 +3,14 @@
         <div class="headbox">
             <span class="text_left text-uppercase">Sự Kiện GOBYART</span>
         </div>
-        <div class="loader-container" >
-            <div class="content">
-                <div class="gobyArtIcon spinner">S</div>
-                <div class="icon-label">Loading</div>
-            </div>
-        </div>
+        {{--<div class="loader-container" >--}}
+            {{--<div class="content">--}}
+                {{--<div class="gobyArtIcon spinner">S</div>--}}
+                {{--<div class="icon-label">Loading</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
         <hr class="divider">
-        <div class="grid-masonry">
+        <div class="grid-masonry event-masonry">
             <div class="grid-column-size"></div>
             <div class="masonry-brick gallery">
                 <article class="gallery grid-item">
