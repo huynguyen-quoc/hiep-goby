@@ -10,7 +10,7 @@
                 <div class="icon-label">Loading</div>
             </div>
         </div>
-        <div class="partner-slideshow-wrapper hidden-data">
+        <div class="partner-slideshow-wrapper">
             <div id="partner-slideshow">
                 <div>
                     <img src="{{asset('assets/images/clients/client1.png')}}">
