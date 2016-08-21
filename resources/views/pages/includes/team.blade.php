@@ -5,12 +5,12 @@
         </div>
 
         <hr class="divider">
-        {{--<div id="team-loader" class="loader-container" >--}}
-            {{--<div class="content">--}}
-                {{--<div class="gobyArtIcon spinner">S</div>--}}
-                {{--<div class="icon-label">Loading</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
+        <div id="team-loader" class="loader-container active" >
+            <div class="content">
+                <div class="gobyArtIcon spinner">S</div>
+                <div class="icon-label">Loading</div>
+            </div>
+        </div>
         <div class="grid-masonry team-masonry" >
             <div class="grid-column-size"></div>
 

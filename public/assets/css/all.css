@@ -579,14 +579,17 @@ u {
   float: left;
   margin: .5%; }
 
-.grid-masonry .grid-item {
-  position: relative;
-  width: 100%;
-  margin: 0; }
-
-.grid-masonry .masonry-brick {
-  position: relative;
-  padding: 0.5% 0.5% 0.5% 0.5%; }
+.grid-masonry {
+  display: none; }
+  .grid-masonry .grid-item {
+    position: relative;
+    width: 100%;
+    margin: 0; }
+  .grid-masonry .masonry-brick {
+    position: relative;
+    padding: 0.5% 0.5% 0.5% 0.5%; }
+  .grid-masonry.active {
+    display: block; }
 
 /*----------------------------------------------------------------*/
 /*  HEADER
