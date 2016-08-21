@@ -45,15 +45,17 @@
             percentPosition: true
         });
 
+        $grid2.imagesLoaded().progress( function() {
+            $grid.masonry('layout');
+        });
+
+
         $(function () {
             $('body').toggleClass('about');
             $('.loader-container').toggleClass("active");
             scrollParallaxAboutImage();$(window).scroll (function() {scrollParallaxAboutImage();});
 
 
-            $grid2.imagesLoaded().progress( function() {
-                $grid.masonry('layout');
-            });
 
 
         })
