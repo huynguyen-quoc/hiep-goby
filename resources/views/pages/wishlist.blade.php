@@ -27,6 +27,8 @@
 
                 $(function () {
                     $('body').toggleClass('wishlist');
+                    $('.loader-container').toggleClass("active");
+                    $('.grid-masonry').toggleClass("active");
 
                     $('.grid-masonry').masonry({
                         columnWidth: '.grid-column-size',

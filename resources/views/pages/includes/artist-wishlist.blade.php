@@ -4,7 +4,13 @@
             <span class="text_left text-uppercase">Nghệ Sĩ Quan Tâm</span>
         </div>
         <hr />
-        <div class="grid-masonry grid-model-list ">
+        <div class="loader-container active" >
+            <div class="content">
+                <div class="gobyArtIcon spinner">S</div>
+                <div class="icon-label">Loading</div>
+            </div>
+        </div>
+        <div class="grid-masonry grid-model-list">
             <div class="grid-column-size"></div>
             <div class="masonry-brick">
                 <article class="image grid-item">

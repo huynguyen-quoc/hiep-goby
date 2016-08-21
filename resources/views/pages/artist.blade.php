@@ -107,7 +107,8 @@
         }
         $(function () {
             $('body').toggleClass('artist');
-
+            $('.loader-container').toggleClass("active");
+            $('.grid-masonry').toggleClass("active");
             scrollParallaxPortraitImage();
 
             $(window).scroll (

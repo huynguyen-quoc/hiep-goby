@@ -1,5 +1,12 @@
 <div class="full-width bg-white col_padding_bottom">
+
     <div class="content">
+        <div class="loader-container active" >
+            <div class="content">
+                <div class="gobyArtIcon spinner">S</div>
+                <div class="icon-label">Loading</div>
+            </div>
+        </div>
         <div class="grid-masonry grid-model-list ">
             <div class="grid-column-size"></div>
             <div class="masonry-brick">
