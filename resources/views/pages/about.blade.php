@@ -50,7 +50,9 @@
                 percentPosition: true
             });
 
-
+            $grid2.imagesLoaded(function () {
+                $grid.masonry('layout');
+            })
         })
 
 
