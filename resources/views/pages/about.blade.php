@@ -51,7 +51,7 @@
             });
 
             $grid2.imagesLoaded(function () {
-                $grid.masonry('layout');
+                $grid2.masonry('layout');
             })
         })
 
