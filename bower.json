@@ -1,0 +1,21 @@
+{
+  "name": "hiep-goby",
+  "description": "GOBYART",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "vendor/bower_dl",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "jquery.fitvids": "FitVids#^1.1.0",
+    "headroom.js": "https://npmcdn.com/headroom.js/bower.zip",
+    "imagesloaded": "^4.1.0",
+    "jquery_lazyload": "jquery.lazyload#^1.9.7",
+    "masonry": "^4.1.1",
+    "jquery-hoverintent": "^1.8.1",
+    "slick-carousel": "^1.6.0"
+  }
+}

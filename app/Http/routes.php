@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
+Route::get('/gioi-thieu', 'AboutController@index');
+Route::get('/nghe-si', 'ArtistsController@index');
+Route::get('/nghe-si/{slug}', 'ArtistsController@detail');
+Route::get('/quan-tam', 'WishListController@index');
+Route::get('/lien-he', 'ContactController@index');
