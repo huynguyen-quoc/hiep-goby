@@ -115,11 +115,14 @@
                 function() {scrollParallaxPortraitImage();
             });
 
-            $('.grid-masonry').masonry({
+            var $grid = $('.grid-masonry').masonry({
                 columnWidth: '.grid-column-size',
                 itemSelector: '.masonry-brick',
                 percentPosition: true
             });
+            $grid.imagesLoaded(function () {
+                $grid.masonry('layout');
+            })
 
             $('.video-content').on('click', 'a.video-slider-image-wrapper', function(){
                 var $this = $(this);
