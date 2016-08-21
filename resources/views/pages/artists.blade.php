@@ -107,6 +107,8 @@
 
         $(function () {
             $('body').toggleClass('artists');
+            $('.loader-container').toggleClass("active");
+            $('.grid-masonry').toggleClass("active");
 
             $('.grid-masonry').masonry({
                 columnWidth: '.grid-column-size',

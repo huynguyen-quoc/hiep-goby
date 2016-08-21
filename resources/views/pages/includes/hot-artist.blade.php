@@ -3,7 +3,7 @@
         <div class="headbox">
             <span class="text_left text-uppercase">Nghệ Sĩ Tiêu Biểu</span>
         </div>
-        <div class="loader-container" >
+        <div class="loader-container active" >
             <div class="content">
                 <div class="gobyArtIcon spinner">S</div>
                 <div class="icon-label">Loading</div>

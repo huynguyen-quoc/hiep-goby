@@ -37,7 +37,8 @@
 
         $(function () {
             $('body').toggleClass('home');
-
+            $('.loader-container').toggleClass("active");
+            $('.grid-masonry').toggleClass("active");
             scrollParallaxHomeImage();$(window).scroll (function() {scrollParallaxHomeImage();});
 
             $('.grid-masonry').masonry({
