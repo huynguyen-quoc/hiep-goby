@@ -37,10 +37,14 @@
             $('body').toggleClass('about');
 
             scrollParallaxAboutImage();$(window).scroll (function() {scrollParallaxAboutImage();});
-            $('.grid-masonry').masonry({
+            var $grid = $('.grid-masonry').masonry({
                 columnWidth: '.grid-column-size',
                 itemSelector: '.masonry-brick',
                 percentPosition: true
+            });
+
+            $grid.imagesLoaded().progress( function() {
+                $grid.masonry('layout');
             });
 
 
