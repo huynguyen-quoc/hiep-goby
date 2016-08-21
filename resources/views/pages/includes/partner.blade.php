@@ -4,7 +4,13 @@
             <span class="text_left text-uppercase">Đối Tác</span>
         </div>
         <hr>
-        <div class="partner-slideshow-wrapper">
+        <div class="loader-container active" >
+            <div class="content">
+                <div class="gobyArtIcon spinner">S</div>
+                <div class="icon-label">Loading</div>
+            </div>
+        </div>
+        <div class="partner-slideshow-wrapper hidden-data">
             <div id="partner-slideshow">
                 <div>
                     <img src="{{asset('assets/images/clients/client1.png')}}">

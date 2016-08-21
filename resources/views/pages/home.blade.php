@@ -39,6 +39,7 @@
             $('body').toggleClass('home');
             $('.loader-container').toggleClass("active");
             $('.grid-masonry').toggleClass("active");
+            $('.partner-slideshow-wrapper').toggleClass('hidden-data');
             scrollParallaxHomeImage();$(window).scroll (function() {scrollParallaxHomeImage();});
 
             $('.grid-masonry').masonry({

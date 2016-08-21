@@ -51,6 +51,10 @@ $border-style: 1px solid rgba(0, 0, 0, 0.12);
     opacity: 0;
 }
 
+.hidden-data {
+    display: none;
+}
+
 .fixed {
     position: fixed;
     z-index: 10;
