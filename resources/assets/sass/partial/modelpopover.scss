@@ -66,10 +66,10 @@
   .grid-model-image-popover-column {
     float: left;
     width: 50%;
-    margin-top: 2.5%;
     .grid-item {
       width: 100%;
       padding: 0;
+      margin-bottom: inherit !important;
     }
   }
 }

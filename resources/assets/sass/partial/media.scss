@@ -152,6 +152,21 @@
     margin: 4% 4% 0 0;
   }
 
+  .parallax-spacer {
+    height: 250px;
+  }
+}
+
+@media only screen and (max-width: 1000px){
+  .artist-type-wrapper {
+    .artist-type-content {
+      margin-top: 0;
+      background: #2E3536;
+      .artist-type-content-inner {
+        text-align: left;
+      }
+    }
+  }
 }
 @media only screen and (min-width: 769px) {
 
@@ -185,36 +200,12 @@
     background-position: center top;
   }
 
-  /* Head */
 
-  /* Content */
-
-  /* --------- 1 Column --------- */
-
-  .col1_1{}
-
-  /* --------- 2 Columns --------- */
-
-  .col2_1{}
-  .col2_2{}
-
-  /* --------- 3 Columns --------- */
-
-  .col3_1{}
-  .col3_2{}
-  .col3_3{}
-
-  /* Image */
-
-
-  /* End Content */
-
-
-  /* End Large screen, non-retina */
 
 }
 
 @media only screen and (max-width:640px) {
+
 
 
 
@@ -302,9 +293,7 @@
     padding: 2% 0 4%;
   }
 
-  .model .model-name{
-    border-bottom: 1px solid #dddddd;
-  }
+
 
   /* --------- 1 Column --------- */
 

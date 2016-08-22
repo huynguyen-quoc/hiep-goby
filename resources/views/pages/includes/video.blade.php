@@ -40,7 +40,7 @@
                 <a class="video-bt-left gobyArtIcon" onclick="$('#video-slider').slick('slickPrev');">J</a>
             </div>
             <div class="video-bt-right-wrapper">
-                <a class="video-bt-right gobyArtIcon" onclick="$('#video-slider').slick('slickPrev');">K</a>
+                <a class="video-bt-right gobyArtIcon" onclick="$('#video-slider').slick('slickNext');">K</a>
             </div>
         </div>
     </div>

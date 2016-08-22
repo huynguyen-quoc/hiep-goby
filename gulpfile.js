@@ -32,8 +32,13 @@ gulp.task("copyfiles", function() {
     .pipe(gulp.dest("resources/assets/js/"));
 
   gulp.src("vendor/bower_dl/jquery_lazyload/jquery.lazyload.js")
-    .pipe(gulp.dest("resources/assets/js/"));   
- 
+    .pipe(gulp.dest("resources/assets/js/"));
+  //Vendor
+  gulp.src("vendor/bower_dl/iCheck/skins/**/*")
+        .pipe(gulp.dest("public/assets/vendor/iCheck/skins"));
+  gulp.src("vendor/bower_dl/iCheck/icheck.js")
+        .pipe(gulp.dest("public/assets/vendor/iCheck"));
+
   //Fonts
   gulp.src("vendor/bower_dl/slick-carousel/slick/fonts/**")
     .pipe(gulp.dest("public/assets/fonts"));

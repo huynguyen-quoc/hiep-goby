@@ -5,6 +5,9 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  &.background-attachment-scroll {
+    background-attachment: scroll !important;
+  }
 }
 
 .parallax-spacer {

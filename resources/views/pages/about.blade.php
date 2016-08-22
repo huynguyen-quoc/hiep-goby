@@ -1,10 +1,6 @@
 @extends("layout.master")
 @section("content")
 
-    <a target="_blank">
-        <div class="parallax parallax-spacer" id="about-spacer-image" style="min-height:400px;background-image: url({{asset('assets/images/ICE_9427.jpg')}}); background-position: 50% -210.938px;">
-        </div>
-    </a>
     @include("pages.includes.about-content")
 
     @include("pages.includes.team")

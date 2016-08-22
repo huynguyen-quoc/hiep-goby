@@ -3,6 +3,43 @@
 
     <div id="title-video">
     </div>
+    <div class="artist-type-wrapper">
+        <div class="artist-type-content clear-fix">
+            <div class="artist-type-content-inner">
+                <div class="artist-type-search-content">
+                    <div class="artist-text">
+                        <p>Bạn đang quan tâm nghệ sĩ nào?</p>
+                    </div>
+
+                    <div class="form-search">
+                        <div class="search-item">
+                            <input type="checkbox" name="iCheck">
+                            <label class="">Ca Sĩ</label>
+                        </div>
+                        <div class="search-item">
+                            <input type="checkbox" name="iCheck">
+                            <label class="">Ban Nhạc</label>
+                        </div>
+                        <div class="search-item">
+                            <input type="checkbox" name="iCheck">
+                            <label class="">PG PB | Người Mẫu</label>
+                        </div>
+                        <div class="search-item">
+                            <input type="checkbox" name="iCheck">
+                            <label class="">Nhóm Nhảy</label>
+                        </div>
+                        <div class="search-item">
+                            <input type="checkbox" name="iCheck">
+                            <label class="">Nghệ Sĩ Khác</label>
+                        </div>
+                        <div class="search-item">
+                            <a href="" class="btn btn-inverted btn-round text-uppercase">Khám Phá Ngay</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     @include("pages.includes.hot-artist")
     <a target="_blank">
         <div class="parallax parallax-spacer" id="home-spacer-image" style="background-image: url({{asset('assets/images/ICE_9427.jpg')}}); background-position: 50% -210.938px;">
@@ -47,7 +84,13 @@
                 itemSelector: '.masonry-brick',
                 percentPosition: true
             });
+            $('input[name=iCheck]').iCheck({
+                checkboxClass: 'iradio_square-pink artist-check',
+                radioClass: 'iradio_flat-pink',
+                uncheckedClass: 'test',
+                increaseArea: '20%' // optional
 
+            });
             $("#partner-slideshow").slick({
                 slidesToScroll: 5,
                 variableWidth: true,

@@ -16,6 +16,7 @@
     "jquery_lazyload": "jquery.lazyload#^1.9.7",
     "masonry": "^4.1.1",
     "jquery-hoverintent": "^1.8.1",
-    "slick-carousel": "^1.6.0"
+    "slick-carousel": "^1.6.0",
+    "iCheck": "^1.0.2"
   }
 }

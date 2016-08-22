@@ -1,6 +1,6 @@
 
-<div class="full-width">
-    <div class="about-content  parallax" style="background-position: 50% 0px;">
+<div class="full-width about-content-wrapper">
+    <div class="about-content  parallax">
         <div class="about-content-inner">
             <div class="content col_padding_bottom col_padding_top">
                 <!-- 3 Col -->
