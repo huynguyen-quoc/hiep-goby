@@ -31,20 +31,16 @@
 }
 
 .logo {
-  width:auto;
-  margin: 3.5% 0 3.5% 12%;
-  float:left;
+  width: auto;
+  margin: 3.5% 0 2.5% 12%;
+  float: left;
   font-size: 525%;
   color: rgb(0,0,0);
   position: relative;
-  & .logo-img {
-    background: url($image-path + "logo.png") no-repeat;
-    width: 115px;
-    height: 80px;
-    position: absolute;
-    top: -15px;
-    right: -31px;
-    background-size: contain;
+  top: -5px;
+  & .goby-GB {
+    color: #BF1B7C;
+    font-size: 0.8em;
   }
 }
 

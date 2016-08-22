@@ -3,11 +3,10 @@
         <div class="content col_padding_bottom">
             <!-- Head -->
             <div class="headbox">
-                <span class="footer-logo left gobyArtIcon">™</span>
+                <span class="footer-logo left gobyIcon goby-GB"></span>
                 <div class="socialbookmark-container">
                     <div class="socialbookmark-row">
                         <a href="https://www.facebook.com/ICE-Models-Germany-872495876166889/" target="_blank" class="social-bookmark"><span class="gobyArtIcon">O</span></a>
-                        <a href="https://www.instagram.com/ice_models_germany" target="_blank" class="social-bookmark"><span class="gobyArtIcon">N</span></a>
                     </div>
                     <div class="socialbookmark-row">
                         <a href="https://vimeo.com/icegermany" target="_blank" class="social-bookmark"><span class="gobyArtIcon">Q</span></a>

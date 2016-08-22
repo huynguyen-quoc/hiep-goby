@@ -36,9 +36,21 @@ gulp.task("copyfiles", function() {
   //Vendor
   gulp.src("vendor/bower_dl/iCheck/skins/**/*")
         .pipe(gulp.dest("public/assets/vendor/iCheck/skins"));
+
   gulp.src("vendor/bower_dl/iCheck/icheck.js")
         .pipe(gulp.dest("public/assets/vendor/iCheck"));
 
+  gulp.src("vendor/bower_dl/fancybox/source/jquery.fancybox.pack.js")
+        .pipe(gulp.dest("public/assets/vendor/fancybox"));
+
+  gulp.src("vendor/bower_dl/fancybox/source/*.png")
+        .pipe(gulp.dest("public/assets/vendor/fancybox"));
+
+  gulp.src("vendor/bower_dl/fancybox/source/jquery.fancybox.css")
+        .pipe(gulp.dest("public/assets/vendor/fancybox"));
+
+  gulp.src("vendor/bower_dl/fancybox/source/*.gif")
+        .pipe(gulp.dest("public/assets/vendor/fancybox"));
   //Fonts
   gulp.src("vendor/bower_dl/slick-carousel/slick/fonts/**")
     .pipe(gulp.dest("public/assets/fonts"));

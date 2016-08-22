@@ -3,8 +3,7 @@
         <div class="header-bg"></div>
         <div class="logo gobyArtIcon">
             <a href="/" class="un-decoration">
-                <span class="logo-img"></span>
-                <span class="logo-dot">x</span>
+                <span class="gobyIcon goby-GB"></span>
             </a>
         </div>
         <div class="m_hidden l_hidden show-if-mobile-menu">

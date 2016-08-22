@@ -57,6 +57,9 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
 *, *:before, *:after {
   box-sizing: inherit; }
 
+a {
+  cursor: pointer; }
+
 /*----------------------------------------------------------------*/
 /*  Colors
 /*----------------------------------------------------------------*/
@@ -308,6 +311,25 @@ img {
   font-weight: 700;
   padding: 8px 19px; }
 
+.fancybox-model-controller {
+  position: absolute;
+  color: white;
+  font-size: 5.5em;
+  line-height: 4rem;
+  z-index: 550; }
+  .fancybox-model-controller.fancybox-model-previous {
+    top: 50%;
+    left: 4rem;
+    transform: translate(0%, -50%); }
+  .fancybox-model-controller.fancybox-model-next {
+    top: 50%;
+    right: 4rem;
+    transform: translate(0%, -50%); }
+  .fancybox-model-controller.fancybox-model-close {
+    top: 2.5rem;
+    right: 5rem;
+    font-size: 5.5rem; }
+
 /*----------------------------------------------------------------*/
 /*  Fonts
 /*----------------------------------------------------------------*/
@@ -351,6 +373,14 @@ img {
   src: url("../fonts/SOFA53NEUN-ICE.eot");
   /* IE9 Compat Modes */
   src: url("../fonts/SOFA53NEUN-ICE.eot?#iefix") format("embedded-opentype"), url("../fonts/SOFA53NEUN-ICE.woff2") format("woff2"), url("../fonts/SOFA53NEUN-ICE.woff") format("woff"), url("../fonts/SOFA53NEUN-ICE.ttf") format("truetype");
+  /* Safari, Android, iOS */
+  font-weight: 500; }
+
+@font-face {
+  font-family: "gobyIcon";
+  src: url("../fonts/goby.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/goby.eot?#iefix") format("embedded-opentype"), url("../fonts/goby.woff2") format("woff2"), url("../fonts/goby.woff") format("woff"), url("../fonts/goby.ttf") format("truetype");
   /* Safari, Android, iOS */
   font-weight: 500; }
 
@@ -411,7 +441,7 @@ h6, .h6 {
 a {
   text-decoration: none; }
   a:hover, a:active {
-    text-decoration: underline; }
+    text-decoration: none; }
 
 hr {
   box-sizing: content-box;
@@ -476,6 +506,20 @@ u {
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none; }
+
+[class^="goby-"], [class*=" goby-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'gobyIcon' !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none; }
+
+.goby-GB:before {
+  content: "\e900"; }
 
 .material-icons {
   font-family: 'Material Icons';
@@ -622,19 +666,15 @@ u {
 
 .logo {
   width: auto;
-  margin: 3.5% 0 3.5% 12%;
+  margin: 3.5% 0 2.5% 12%;
   float: left;
   font-size: 525%;
   color: black;
-  position: relative; }
-  .logo .logo-img {
-    background: url("../images/logo.png") no-repeat;
-    width: 115px;
-    height: 80px;
-    position: absolute;
-    top: -15px;
-    right: -31px;
-    background-size: contain; }
+  position: relative;
+  top: -5px; }
+  .logo .goby-GB {
+    color: #BF1B7C;
+    font-size: 0.8em; }
 
 .logo-dot {
   color: #DB4CA0; }

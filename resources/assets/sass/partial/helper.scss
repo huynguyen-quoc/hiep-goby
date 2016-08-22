@@ -297,3 +297,37 @@ img {
   font-weight: 700;
   padding: 8px 19px;
 }
+
+.fancybox-model-controller {
+    position: absolute;
+    color: white;
+    font-size: 5.5em;
+    line-height: 4rem;
+    z-index: 550;
+
+    &.fancybox-model-previous {
+        top: 50%;
+        left: 4rem;
+        -webkit-transform: translate(0%,-50%);
+        -moz-transform: translate(0%,-50%);
+        -ms-transform: translate(0%,-50%);
+        -o-transform: translate(0%,-50%);
+        transform: translate(0%,-50%);
+    }
+    &.fancybox-model-next {
+        top: 50%;
+        right: 4rem;
+        -webkit-transform: translate(0%,-50%);
+        -moz-transform: translate(0%,-50%);
+        -ms-transform: translate(0%,-50%);
+        -o-transform: translate(0%,-50%);
+        transform: translate(0%,-50%);
+    }
+    &.fancybox-model-close {
+        top: 2.5rem;
+        right: 5rem;
+        font-size: 5.5rem;
+    }
+}
+
+

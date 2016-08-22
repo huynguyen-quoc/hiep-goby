@@ -15,8 +15,9 @@
         {{--<link rel="icon" type="image/x-icon" href="_images/favicon.ico">--}}
         {{--<link rel="shortcut icon" type="image/x-icon" href="_common/images_sys/favicon.ico">--}}
 
-        <link href="/assets/css/all.css" rel="stylesheet">
         <link href="/assets/vendor/iCheck/skins/all.css" rel="stylesheet">
+        <link href="/assets/vendor/fancybox/jquery.fancybox.css" rel="stylesheet">
+        <link href="/assets/css/all.css" rel="stylesheet">
         @yield('styles')
 
          <!--[if lt IE 9]>
@@ -53,6 +54,7 @@
 
         <script  type="text/javascript" src="/assets/js/all.js"></script>
         <script  type="text/javascript" src="/assets/vendor/iCheck/icheck.js"></script>
+        <script  type="text/javascript" src="/assets/vendor/fancybox/jquery.fancybox.pack.js"></script>
         <script  type="text/javascript"  src="/assets/js/common.js"></script>
 
         @yield('scripts')

@@ -17,6 +17,7 @@
     "masonry": "^4.1.1",
     "jquery-hoverintent": "^1.8.1",
     "slick-carousel": "^1.6.0",
-    "iCheck": "^1.0.2"
+    "iCheck": "^1.0.2",
+    "fancybox": "^2.1.5"
   }
 }
