@@ -314,9 +314,9 @@ img {
 .fancybox-model-controller {
   position: absolute;
   color: white;
-  font-size: 5.5em;
+  font-size: 4.5em;
   line-height: 4rem;
-  z-index: 550; }
+  z-index: 8040; }
   .fancybox-model-controller.fancybox-model-previous {
     top: 50%;
     left: 4rem;
@@ -329,6 +329,12 @@ img {
     top: 2.5rem;
     right: 5rem;
     font-size: 5.5rem; }
+
+.bg-white {
+  background: #FFFFFF; }
+
+.slick-slide {
+  outline: none; }
 
 /*----------------------------------------------------------------*/
 /*  Fonts
@@ -721,26 +727,25 @@ u {
   color: #fff;
   text-decoration: none; }
 
-.footer .socialbookmark-container {
-  float: right;
-  margin-right: -0.5rem;
-  position: relative;
-  top: -1rem; }
-  .footer .socialbookmark-container .socialbookmark-row {
-    display: inline-block; }
-
-.footer u {
-  font-family: "RobotoCondensed-Light", "Roboto-Light", "Helvetica Neue", "Arial", sans-serif; }
-
-.footer p {
-  font-family: "RobotoCondensed-Light", "Roboto-Light", "Helvetica Neue", "Arial", sans-serif; }
-
-.footer .social-bookmark {
-  font-size: 2.0rem !important;
-  line-height: 3rem;
-  opacity: 0.9;
-  padding: 0.75rem;
-  text-align: center; }
+.footer {
+  color: #FFFFFF; }
+  .footer .socialbookmark-container {
+    float: right;
+    margin-right: -0.5rem;
+    position: relative;
+    top: -1rem; }
+    .footer .socialbookmark-container .socialbookmark-row {
+      display: inline-block; }
+  .footer u {
+    font-family: "RobotoCondensed-Light", "Roboto-Light", "Helvetica Neue", "Arial", sans-serif; }
+  .footer p {
+    font-family: "RobotoCondensed-Light", "Roboto-Light", "Helvetica Neue", "Arial", sans-serif; }
+  .footer .social-bookmark {
+    font-size: 2.0rem !important;
+    line-height: 3rem;
+    opacity: 0.9;
+    padding: 0.75rem;
+    text-align: center; }
 
 /*----------------------------------------------------------------*/
 /*  PARALLAX
@@ -886,7 +891,7 @@ u {
 .partner-slideshow-wrapper {
   position: relative;
   width: 100%;
-  background: #ffffff; }
+  background-color: #FFFFFF; }
   .partner-slideshow-wrapper a {
     text-decoration: none; }
     .partner-slideshow-wrapper a.partner-bt-left {
@@ -910,8 +915,8 @@ u {
       .partner-slideshow-wrapper a.partner-bt-right:hover {
         color: #59aaed; }
   .partner-slideshow-wrapper img {
-    height: 90px;
-    padding: 0.5em 0.5em; }
+    height: 120px;
+    padding: 1.5em 5.0em; }
 
 /*----------------------------------------------------------------*/
 /*  VIDEO
@@ -1039,13 +1044,17 @@ u {
 .slogan {
   overflow: hidden;
   color: #fff;
-  font-size: 90%;
-  line-height: 170%;
+  font-size: 1.3em;
+  line-height: 140%;
   background-image: url("../images/ICE_9427.jpg");
   background-position: center top;
-  font-family: "RobotoCondensed-Light", "Roboto-Light", "Helvetica Neue", "Arial", sans-serif; }
+  font-family: "RobotoCondensed-Light", "Roboto-Light", "Helvetica Neue", "Arial", sans-serif;
+  position: relative;
+  min-height: 800px; }
   .slogan .slogan-inner {
-    background: rgba(0, 0, 0, 0.7); }
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0; }
 
 /*----------------------------------------------------------------*/
 /*  ABOUT CONTENT
@@ -1644,6 +1653,10 @@ img.image-loaded {
     font-size: 6.5rem; }
   .footer .headbox {
     padding-bottom: 0; }
+  .fancybox-model-controller.fancybox-model-close {
+    right: 3%; }
+  .artist-type-content-inner .form-search .search-item {
+    display: block !important; }
   /* --------- Nav Logo --------- */
   .logo {
     font-size: 350%;

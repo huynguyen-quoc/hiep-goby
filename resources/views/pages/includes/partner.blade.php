@@ -1,3 +1,4 @@
+@if(isset($partners) && count($partners)> 0)
 <div class="full-width bg-white">
     <div class="content col_padding_bottom">
         <div class="headbox">
@@ -12,36 +13,11 @@
         </div>
         <div class="partner-slideshow-wrapper hidden-data">
             <div id="partner-slideshow">
-                <div>
-                    <img src="{{asset('assets/images/clients/client1.png')}}">
-                </div>
-                <div>
-                    <img src="{{asset('assets/images/clients/client2.png')}}">
-                </div>
-                <div>
-                    <img src="{{asset('assets/images/clients/client3.png')}}">
-                </div>
-                <div>
-                    <img src="{{asset('assets/images/clients/client4.png')}}">
-                </div>
-                <div>
-                    <img src="{{asset('assets/images/clients/client5.png')}}">
-                </div>
-                <div>
-                    <img src="{{asset('assets/images/clients/client1.png')}}">
-                </div>
-                <div>
-                    <img src="{{asset('assets/images/clients/client1.png')}}">
-                </div>
-                <div>
-                    <img src="{{asset('assets/images/clients/client1.png')}}">
-                </div>
-                <div>
-                    <img src="{{asset('assets/images/clients/client1.png')}}">
-                </div>
-                <div>
-                    <img src="{{asset('assets/images/clients/client1.png')}}">
-                </div>
+                @foreach($partners as $partner)
+                    <div>
+                        <img alt="{{$partner['partner_name']}}" src="{{asset('assets/partner/'.$partner['partner_image'])}}">
+                    </div>
+                @endforeach
 
             </div>
             <a class="partner-bt-left gobyArtIcon" onclick="$('#partner-slideshow').slick('slickPrev');">J</a>
@@ -49,3 +25,4 @@
         </div>
     </div>
 </div>
+@endif

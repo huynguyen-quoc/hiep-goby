@@ -1,4 +1,13 @@
 @extends("layout.master")
+@section("meta")
+    @if(isset($siteOptions))
+        <meta name="keywords" content="{{!isset($siteOptions['SITE_KEYWORD']) ? '' :$siteOptions['SITE_KEYWORD']}}">
+        <meta name="description" content="{{!isset($siteOptions['SITE_DESCRIPTION']) ? '' : $siteOptions['SITE_DESCRIPTION']}}">
+        <meta name="copyright" content="{{!isset($siteOptions['SITE_COPYRIGHT']) ? '' : $siteOptions['SITE_COPYRIGHT']}}">
+        <meta name="author" content="{{!isset($siteOptions['SITE_AUTHOR']) ? '' : $siteOptions['SITE_AUTHOR']}}">
+        <meta name="robots" content="all">
+    @endif
+@endsection
 @section("content")
 
     <div id="title-video">
@@ -12,26 +21,34 @@
                     </div>
 
                     <div class="form-search">
-                        <div class="search-item">
-                            <input type="checkbox" name="iCheck">
-                            <label class="">Ca Sĩ</label>
-                        </div>
-                        <div class="search-item">
-                            <input type="checkbox" name="iCheck">
-                            <label class="">Ban Nhạc</label>
-                        </div>
-                        <div class="search-item">
-                            <input type="checkbox" name="iCheck">
-                            <label class="">PG PB | Người Mẫu</label>
-                        </div>
-                        <div class="search-item">
-                            <input type="checkbox" name="iCheck">
-                            <label class="">Nhóm Nhảy</label>
-                        </div>
-                        <div class="search-item">
-                            <input type="checkbox" name="iCheck">
-                            <label class="">Nghệ Sĩ Khác</label>
-                        </div>
+                        @if(isset($artistTypes))
+                            @foreach($artistTypes as $artistType)
+                                <div class="search-item">
+                                    <input type="checkbox" name="iCheck" value="{{ $artistType['type_slug']}}">
+                                    <label class="">{{ $artistType['type_name']}}</label>
+                                </div>
+                            @endforeach
+                        @endif
+                        {{--<div class="search-item">--}}
+                            {{--<input type="checkbox" name="iCheck">--}}
+                            {{--<label class="">Ca Sĩ</label>--}}
+                        {{--</div>--}}
+                        {{--<div class="search-item">--}}
+                            {{--<input type="checkbox" name="iCheck">--}}
+                            {{--<label class="">Ban Nhạc</label>--}}
+                        {{--</div>--}}
+                        {{--<div class="search-item">--}}
+                            {{--<input type="checkbox" name="iCheck">--}}
+                            {{--<label class="">PG PB | Người Mẫu</label>--}}
+                        {{--</div>--}}
+                        {{--<div class="search-item">--}}
+                            {{--<input type="checkbox" name="iCheck">--}}
+                            {{--<label class="">Nhóm Nhảy</label>--}}
+                        {{--</div>--}}
+                        {{--<div class="search-item">--}}
+                            {{--<input type="checkbox" name="iCheck">--}}
+                            {{--<label class="">Nghệ Sĩ Khác</label>--}}
+                        {{--</div>--}}
                         <div class="search-item">
                             <a href="" class="btn btn-inverted btn-round text-uppercase">Khám Phá Ngay</a>
                         </div>
@@ -41,13 +58,13 @@
         </div>
     </div>
     @include("pages.includes.hot-artist")
-    <a target="_blank">
-        <div class="parallax parallax-spacer" id="home-spacer-image" style="background-image: url({{asset('assets/images/ICE_9427.jpg')}}); background-position: 50% -210.938px;">
-        </div>
-    </a>
+    {{--<a target="_blank">--}}
+        {{--<div class="parallax parallax-spacer" id="home-spacer-image" style="background-image: url({{asset('assets/images/ICE_9427.jpg')}}); background-position: 50% -210.938px;">--}}
+        {{--</div>--}}
+    {{--</a>--}}
     @include("pages.includes.slogan")
     @include("pages.includes.partner")
-@stop()
+@endsection
 @section("scripts")
     <script type="text/javascript">
         var scrollParallaxHomeImage = function(){
@@ -68,9 +85,11 @@
                 elBackgrounPos = "50% " + newPositionY;
                 el.css({backgroundPosition: elBackgrounPos});
             }
-        }
+        };
 
-        $('#title-video').html('<iframe  src="https://www.youtube.com/embed/Qp7_3DIxsbU?autoplay=1&controls=0&modestbranding=1&loop=1&playlist=Qp7_3DIxsbU" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>').fitVids();
+        @if(isset($siteOptions) && isset($siteOptions['SITE_YOUTUBE_HOME_ID']))
+            $('#title-video').html('<iframe  src="https://www.youtube.com/embed/{{$siteOptions['SITE_YOUTUBE_HOME_ID']}}?autoplay=1&controls=0&modestbranding=1&loop=1&playlist={{$siteOptions['SITE_YOUTUBE_HOME_ID']}}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>').fitVids();
+        @endif
 
         $(function () {
             $('body').toggleClass('home');
@@ -84,6 +103,7 @@
                 itemSelector: '.masonry-brick',
                 percentPosition: true
             });
+
             $('input[name=iCheck]').iCheck({
                 checkboxClass: 'iradio_square-pink artist-check',
                 radioClass: 'iradio_flat-pink',
@@ -91,17 +111,14 @@
                 increaseArea: '20%' // optional
 
             });
+
             $("#partner-slideshow").slick({
                 slidesToScroll: 5,
                 variableWidth: true,
-                autoplay: false,
-                fade: false,
-                dots: false,
-                pauseOnHover: false,
+                autoPlay: true,
+                infinite: true,
                 arrows: true,
-                draggable: true,
-                infinite:false,
-                accessibility: false,
+                dots : false,
                 responsive: [
                     {
                         breakpoint: 850,
@@ -121,4 +138,4 @@
 
 
     </script>
-@stop()
+@endsection

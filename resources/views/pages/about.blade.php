@@ -6,7 +6,7 @@
     @include("pages.includes.team")
 
     @include("pages.includes.about-event")
-@stop()
+@endsection
 @section("scripts")
     <script type="text/javascript">
 
@@ -48,9 +48,49 @@
 
             $grid2.imagesLoaded(function () {
                 $grid2.masonry('layout');
-            })
+            });
+
+            $(".fancybox").attr('rel', 'gallery')
+                    .fancybox({
+                        arrows : false,
+                        closeBtn : false,
+                        scrolling : 'no',
+                        nextEffect : 'fade',
+                        prevEffect : 'fade',
+                        beforeShow: function() {
+                            var $this = $(this.wrap);
+                            if($this){
+                                if($this.siblings('.fancybox-model-controller').length > 0) return;
+                                var temp = '<a class="fancybox-model-controller fancybox-model-close" ><span class="gobyArtIcon">D</span></a>' +
+                                        '<div class="fancybox-model-wrapper ">' +
+                                        '<a class="fancybox-model-controller fancybox-model-previous"> ' +
+                                        '<span class="gobyArtIcon">J</span></a> ' +
+                                        '<a class="fancybox-model-controller fancybox-model-next">' +
+                                        '<span class="gobyArtIcon">K</span></a>' +
+                                        '</div>';
+                                $(temp).prependTo($this.parent());
+                                $this.parent().on('click', '.fancybox-model-previous', function(){
+                                    $.fancybox.prev()
+                                });
+                                $this.parent().on('click', '.fancybox-model-next', function(){
+                                    $.fancybox.next()
+                                });
+                                $this.parent().on('click', '.fancybox-model-close', function(){
+                                    $.fancybox.close()
+                                })
+                            }
+                        },
+                        beforeClose: function () {
+                            var $this = $(this.wrap);
+                            console.log('ok');
+                            if($this){
+                                $('.fancybox-model-wrapper', $this.parent()).remove();
+                                $('.fancybox-model-controller', $this.parent()).remove();
+                            }
+                        }
+                    });
         })
 
 
     </script>
-@stop()
+@endsection

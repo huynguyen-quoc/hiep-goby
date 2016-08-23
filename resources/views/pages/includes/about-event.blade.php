@@ -15,7 +15,7 @@
             <div class="masonry-brick gallery">
                 <article class="gallery grid-item">
                     <div class="gallery-img-wrapper">
-                        <a>
+                        <a class="fancybox" href="{{asset('assets/images/gallery/1.jpg')}}">
                             <img src="{{asset('/assets/images/gallery/1.jpg')}}">
                         </a>
                     </div>
@@ -24,7 +24,7 @@
             <div class="masonry-brick gallery">
                 <article class="gallery grid-item">
                     <div class="gallery-img-wrapper">
-                        <a>
+                        <a class="fancybox" href="{{asset('assets/images/gallery/2.jpg')}}">
                             <img src="{{asset('/assets/images/gallery/2.jpg')}}">
                         </a>
                     </div>
@@ -33,7 +33,7 @@
             <div class="masonry-brick gallery">
                 <article class="gallery grid-item">
                     <div class="gallery-img-wrapper">
-                        <a>
+                        <a class="fancybox" href="{{asset('assets/images/gallery/3.jpg')}}">
                             <img src="{{asset('/assets/images/gallery/3.jpg')}}">
                         </a>
                     </div>
@@ -42,7 +42,7 @@
             <div class="masonry-brick gallery">
                 <article class="gallery grid-item">
                     <div class="gallery-img-wrapper">
-                        <a>
+                        <a class="fancybox" href="{{asset('assets/images/gallery/4.jpg')}}">
                             <img src="{{asset('/assets/images/gallery/4.jpg')}}">
                         </a>
                     </div>
@@ -51,7 +51,7 @@
             <div class="masonry-brick gallery">
                 <article class="gallery grid-item">
                     <div class="gallery-img-wrapper">
-                        <a>
+                        <a class="fancybox" href="{{asset('assets/images/gallery/5.jpg')}}">
                             <img src="{{asset('/assets/images/gallery/5.jpg')}}">
                         </a>
                     </div>
@@ -60,7 +60,7 @@
             <div class="masonry-brick gallery">
                 <article class="gallery grid-item">
                     <div class="gallery-img-wrapper">
-                        <a>
+                        <a class="fancybox" href="{{asset('assets/images/gallery/6.jpg')}}">
                             <img src="{{asset('/assets/images/gallery/6.jpg')}}">
                         </a>
                     </div>
@@ -69,7 +69,7 @@
             <div class="masonry-brick gallery">
                 <article class="gallery grid-item">
                     <div class="gallery-img-wrapper">
-                        <a>
+                        <a class="fancybox" href="{{asset('assets/images/gallery/7.jpg')}}">
                             <img src="{{asset('/assets/images/gallery/7.jpg')}}">
                         </a>
                     </div>
@@ -78,7 +78,7 @@
             <div class="masonry-brick gallery">
                 <article class="gallery grid-item">
                     <div class="gallery-img-wrapper">
-                        <a>
+                        <a class="fancybox" href="{{asset('assets/images/gallery/8.jpg')}}">
                             <img src="{{asset('/assets/images/gallery/8.jpg')}}">
                         </a>
                     </div>
@@ -87,7 +87,7 @@
             <div class="masonry-brick gallery">
                 <article class="gallery grid-item">
                     <div class="gallery-img-wrapper">
-                        <a>
+                        <a class="fancybox" href="{{asset('assets/images/gallery/9.jpg')}}">
                             <img src="{{asset('/assets/images/gallery/9.jpg')}}">
                         </a>
                     </div>
@@ -96,7 +96,7 @@
             <div class="masonry-brick gallery">
                 <article class="gallery grid-item">
                     <div class="gallery-img-wrapper">
-                        <a>
+                        <a class="fancybox" href="{{asset('assets/images/gallery/10.jpg')}}">
                             <img src="{{asset('/assets/images/gallery/10.jpg')}}">
                         </a>
                     </div>
@@ -105,7 +105,7 @@
             <div class="masonry-brick gallery">
                 <article class="gallery grid-item">
                     <div class="gallery-img-wrapper">
-                        <a>
+                        <a class="fancybox" href="{{asset('assets/images/gallery/11.jpg')}}">
                             <img src="{{asset('/assets/images/gallery/11.jpg')}}">
                         </a>
                     </div>
@@ -114,7 +114,7 @@
             <div class="masonry-brick gallery">
                 <article class="gallery grid-item">
                     <div class="gallery-img-wrapper">
-                        <a>
+                        <a class="fancybox" href="{{asset('assets/images/gallery/12.jpg')}}">
                             <img src="{{asset('/assets/images/gallery/12.jpg')}}">
                         </a>
                     </div>
@@ -123,7 +123,7 @@
             <div class="masonry-brick gallery">
                 <article class="gallery grid-item">
                     <div class="gallery-img-wrapper">
-                        <a>
+                        <a class="fancybox" href="{{asset('assets/images/gallery/13.jpg')}}">
                             <img src="{{asset('/assets/images/gallery/13.jpg')}}">
                         </a>
                     </div>
@@ -132,7 +132,7 @@
             <div class="masonry-brick gallery">
                 <article class="gallery grid-item">
                     <div class="gallery-img-wrapper">
-                        <a>
+                        <a class="fancybox" href="{{asset('assets/images/gallery/14.jpg')}}">
                             <img src="{{asset('/assets/images/gallery/14.jpg')}}">
                         </a>
                     </div>
@@ -140,7 +140,7 @@
             </div> <div class="masonry-brick gallery">
                 <article class="gallery grid-item">
                     <div class="gallery-img-wrapper">
-                        <a>
+                        <a class="fancybox" href="{{asset('assets/images/gallery/15.jpg')}}">
                             <img src="{{asset('/assets/images/gallery/15.jpg')}}">
                         </a>
                     </div>
@@ -149,7 +149,7 @@
             <div class="masonry-brick gallery">
                 <article class="gallery grid-item">
                     <div class="gallery-img-wrapper">
-                        <a>
+                        <a class="fancybox" href="{{asset('assets/images/gallery/16.jpg')}}">
                             <img src="{{asset('/assets/images/gallery/16.jpg')}}">
                         </a>
                     </div>
@@ -157,7 +157,7 @@
             </div> <div class="masonry-brick gallery">
                 <article class="gallery grid-item">
                     <div class="gallery-img-wrapper">
-                        <a>
+                        <a class="fancybox" href="{{asset('assets/images/gallery/17.jpg')}}">
                             <img src="{{asset('/assets/images/gallery/17.jpg')}}">
                         </a>
                     </div>
@@ -165,7 +165,7 @@
             </div> <div class="masonry-brick gallery">
                 <article class="gallery grid-item">
                     <div class="gallery-img-wrapper">
-                        <a>
+                        <a class="fancybox" href="{{asset('assets/images/gallery/18.jpg')}}">
                             <img src="{{asset('/assets/images/gallery/18.jpg')}}">
                         </a>
                     </div>
@@ -174,7 +174,7 @@
             <div class="masonry-brick gallery">
                 <article class="gallery grid-item">
                     <div class="gallery-img-wrapper">
-                        <a>
+                        <a class="fancybox" href="{{asset('assets/images/gallery/19.jpg')}}">
                             <img src="{{asset('/assets/images/gallery/19.jpg')}}">
                         </a>
                     </div>
@@ -183,7 +183,7 @@
             <div class="masonry-brick gallery">
                 <article class="gallery grid-item">
                     <div class="gallery-img-wrapper">
-                        <a>
+                        <a class="fancybox" href="{{asset('assets/images/gallery/20.jpg')}}">
                             <img src="{{asset('/assets/images/gallery/20.jpg')}}">
                         </a>
                     </div>
@@ -192,7 +192,7 @@
             <div class="masonry-brick gallery">
                 <article class="gallery grid-item">
                     <div class="gallery-img-wrapper">
-                        <a>
+                        <a class="fancybox" href="{{asset('assets/images/gallery/21.jpg')}}">
                             <img src="{{asset('/assets/images/gallery/21.jpg')}}">
                         </a>
                     </div>

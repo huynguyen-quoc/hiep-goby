@@ -23,8 +23,8 @@
                 </div>
             </div>
         </div>
-@stop()
-        @section("scripts")
+@endsection
+@section("scripts")
             <script type="text/javascript">
                 function bindInfoWindow(marker, map, title, desc, telephone, email, web, link) {
                     var infoWindowVisible = (function () {
@@ -125,6 +125,4 @@
             <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMWvrZkeLRrGTqh9RgY7niHemli1HIPDU&callback=initMap"
                     type="text/javascript"></script>
 
-
-
-@stop()
+@endsection

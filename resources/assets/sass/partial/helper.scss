@@ -301,9 +301,9 @@ img {
 .fancybox-model-controller {
     position: absolute;
     color: white;
-    font-size: 5.5em;
+    font-size: 4.5em;
     line-height: 4rem;
-    z-index: 550;
+    z-index: 8040;
 
     &.fancybox-model-previous {
         top: 50%;
@@ -330,4 +330,11 @@ img {
     }
 }
 
+.bg-white{
+    background : #FFFFFF;
+}
+
+.slick-slide {
+    outline: none;
+}
 

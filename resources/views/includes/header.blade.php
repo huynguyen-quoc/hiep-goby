@@ -11,6 +11,23 @@
                         <a href="#" class="navigation-toggle">=</a>
                     </span>
         </div>
+        <div class="navi_mobile clearfix">
+            <div class="m_hidden l_hidden show-if-mobile-menu">
+                <div class="logo gobyArtIcon">
+                    <a href="/" class="un-decoration">
+                        <span class="gobyIcon goby-GB"></span>
+                    </a>
+                </div>
+                <div class="clear-fix">
+				  		<span class="gobyArtIcon">
+			  				<a href="#" class="navi-toggle">=</a>
+			  			</span>
+                </div>
+                <li><a href="/danh-sach-nghe-si">Nghệ Sĩ</a></li>
+                <li><a href="/gioi-thieu">Giới Thiệu</a></li>
+                <li><a href="/lien-he">Liên Hệ</a></li>
+            </div>
+        </div>
 
         <div class="navigation s_hidden hide-if-mobile-menu">
             <ul>

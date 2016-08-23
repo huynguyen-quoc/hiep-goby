@@ -348,8 +348,19 @@
   }
 
 
+  .fancybox-model-controller {
+    &.fancybox-model-close {
+      right: 3%;
+    }
+  }
 
-
+  .artist-type-content-inner {
+    .form-search{
+      .search-item {
+        display: block !important;
+      }
+    }
+  }
 
 
 

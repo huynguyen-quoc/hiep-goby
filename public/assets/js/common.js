@@ -11,7 +11,13 @@ if( $(window).width() < 800 || navigator.userAgent.match(/(iPod|iPhone|iPad)/) )
     if (window.parallaxScrollEnabled==false) {
         $(".parallax").addClass("background-attachment-scroll");
     }
+
+
     $(function(){
+             $(".navi_mobile").slideToggle(200);
+            $(".navi_mobile").on('touchmove', function(e) {
+                e.preventDefault();
+            });
             // HEAD ROOM
             var header = document.querySelector("#header");
             if(header!= undefined){

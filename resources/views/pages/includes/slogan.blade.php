@@ -1,4 +1,4 @@
-<div class="slogan  parallax" style="background-position: 50% 0px;">
+<div class="slogan  parallax parallax-spacer" id="home-spacer-image" style="background-position: 50% -210.938px;">
     <div class="slogan-inner">
         <div class="content col_padding_bottom col_padding_top">
                 <!-- 3 Col -->
@@ -11,8 +11,6 @@
                         Người nghệ sĩ phải tạo ra một tia lửa trước khi có thể nhóm lên ngọn lửa và trước khi nghệ thuật sinh ra, người nghệ sĩ phải sẵn sàng để ngọn lửa sáng tạo của chính mình nuốt trọn.
                     </h3>
                 </div>
-
-                <hr class="white l_hidden ">
 
                 <div class="col col2_2 text_left">
                     <h2 class="text-uppercase">

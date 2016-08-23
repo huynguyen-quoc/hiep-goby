@@ -1,4 +1,13 @@
 @extends("layout.master")
+@section("meta")
+    @if(isset($siteOptions))
+        <meta name="keywords" content="{{!isset($siteOptions['SITE_KEYWORD']) ? '' :$siteOptions['SITE_KEYWORD']}}">
+        <meta name="description" content="{{!isset($siteOptions['SITE_DESCRIPTION']) ? '' : $siteOptions['SITE_DESCRIPTION']}}">
+        <meta name="copyright" content="{{!isset($siteOptions['SITE_COPYRIGHT']) ? '' : $siteOptions['SITE_COPYRIGHT']}}">
+        <meta name="author" content="{{!isset($siteOptions['SITE_AUTHOR']) ? '' : $siteOptions['SITE_AUTHOR']}}">
+        <meta name="robots" content="all">
+    @endif
+@endsection
 @section("content")
     <div class="model model-detail">
         <div class="full-width bg-grey">
@@ -81,7 +90,7 @@
 
          </div>
     </div>
-@stop()
+@endsection
 @section("scripts")
     <script type="text/javascript">
         var scrollParallaxPortraitImage=function(){
@@ -161,13 +170,18 @@
 
             });
 
+
             $(".fancybox").attr('rel', 'gallery')
                     .fancybox({
                         arrows : false,
                         closeBtn : false,
-                        afterShow: function() {
+                        scrolling : 'no',
+                        nextEffect : 'fade',
+                        prevEffect : 'fade',
+                        beforeShow: function() {
                             var $this = $(this.wrap);
                             if($this){
+                                if($this.siblings('.fancybox-model-controller').length > 0) return;
                                 var temp = '<a class="fancybox-model-controller fancybox-model-close" ><span class="gobyArtIcon">D</span></a>' +
                                     '<div class="fancybox-model-wrapper ">' +
                                     '<a class="fancybox-model-controller fancybox-model-previous"> ' +
@@ -200,4 +214,4 @@
 
 
     </script>
-@stop()
+@endsection
