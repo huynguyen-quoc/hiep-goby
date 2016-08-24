@@ -17,9 +17,9 @@
                 @foreach($artistHot as $artist)
                     <div class="masonry-brick">
                         <article class="model grid-item">
-                            <a href="#" >
+                            <a href="/nghe-si/{{ $artist['artist_slug'] }}" >
                                 <div class="model-img-wrapper model-background-img-wrapper"
-                                     style="background-image: url({{ asset('assets/models/'. $artist['artist_folder'].'/'. $artist['artist_avatar'])}})">
+                                     style="background-image: url({{ asset('assets/upload/'.$artist['artist_type_slug'].'/'. $artist['artist_slug'].'/'. $artist['artist_avatar'])}})">
                                     <div class="model-name-box">
                                         <span class="model-name" data-name="{{ $artist['artist_name'] }}"></span>
                                     </div>

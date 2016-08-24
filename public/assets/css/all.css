@@ -1184,7 +1184,7 @@ img.image-loaded {
 .model-detail .model-info .model-detail-label {
   text-transform: lowercase;
   display: inline-block;
-  width: 5rem; }
+  width: 5em; }
 
 .model-detail .model-info .model-info-detail {
   line-height: 200%; }

@@ -17,7 +17,7 @@
                         <div class="model-back-link s_hidden">
                             <a href="" ><span class="gobyArtIcon">;</span></a>
                         </div>
-                        <span class="model-detail-name">birthe harms</span>
+                        <span class="model-detail-name">{{ isset($artistDetail) ? $artistDetail['artist_full_name'] : '' }}</span>
                     </div>
                 </div>
                 <div class="controls s_hidden m_hidden">
@@ -35,47 +35,28 @@
                     </ul>
                 </div>
 
+                @if(isset($artistExtra1) && count($artistExtra1) > 0 && isset($artistExtra2) && count($artistExtra2) > 0)
+                    <div class="model-info">
+                        <div class="model-info-col-1">
+                            @for($i = 0; $i < count($artistExtra1); $i++)
+                                <div class="model-info-detail">
+                                    <span class="model-detail-label">{{$artistExtra1[$i]['title']}}</span>
+                                    <span class="model-detail-value">{{$artistExtra1[$i]['value']}}</span>
+                                </div>
+                            @endfor
+                        </div>
 
-                <div class="model-info">
-                    <div class="model-info-col-1">
-                        <div class="model-info-detail">
-                            <span class="model-detail-label">Height</span>
-                            <span class="model-detail-value" >180 cm/5'11"</span>
+                        <div class="model-info-col-2">
+                            @for($i =0; $i < count($artistExtra2); $i++)
+                                <div class="model-info-detail">
+                                    <span class="model-detail-label">{{$artistExtra2[$i]['title']}}</span>
+                                    <span class="model-detail-value">{{$artistExtra2[$i]['value']}}</span>
+                                </div>
+                            @endfor
                         </div>
-                        <div class="model-info-detail">
-                            <span class="model-detail-label">bust</span>
-                            <span class="model-detail-value">77 cm/30.5"</span>
-                        </div>
-                        <div class="model-info-detail">
-                            <span class="model-detail-label">Waist</span>
-                            <span class="model-detail-value">60 cm/23.5"</span>
-                        </div>
-                        <div class="model-info-detail">
-                            <span class="model-detail-label">Hips</span>
-                            <span class="model-detail-value">89 cm/35"</span>
-                        </div>
+
                     </div>
-
-                    <div class="model-info-col-2">
-                        <div class="model-info-detail">
-                            <span class="model-detail-label">Dress</span>
-                            <span class="model-detail-value">34 eu/4 us/6 uk</span>
-                        </div>
-                        <div class="model-info-detail">
-                            <span class="model-detail-label">Shoes</span>
-                            <span class="model-detail-value">42 EU/11 US/7.5 UK</span>
-                        </div>
-                        <div class="model-info-detail">
-                            <span class="model-detail-label">Hair</span>
-                            <span class="model-detail-value">Darkblond</span>
-                        </div>
-                        <div class="model-info-detail">
-                            <span class="model-detail-label">Eyes</span>
-                            <span class="model-detail-value">Blue/Green</span>
-                        </div>
-                    </div>
-
-                </div>
+                @endif
 
 
             </div>
@@ -89,6 +70,7 @@
                       background-position: 50% -557.5px;">
 
          </div>
+        </div>
     </div>
 @endsection
 @section("scripts")

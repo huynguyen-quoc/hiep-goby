@@ -1,3 +1,4 @@
+@if(isset($videoArtist) && count($videoArtist)> 0)
 <div class="full-width bg-grey with-bottom-padding ">
     <div class="content video-content">
         <div class="headbox">
@@ -6,34 +7,23 @@
         <hr>
         <div class="video-slider-wrapper">
             <div id="video-slider">
-                <div class="item-video-slider grid-item">
-                    <div class="model-video-wrapper video_16_9">
-                        <div class="video-inner">
-                            <a  class="video-slider-image-wrapper" data-src="//www.youtube.com/embed/f4Py54JZC8M"
-                                style="background-image: url({{asset('assets/images/video/1.jpg')}});" tabindex="0">
-                                <div class="video-image-overlay"></div>
-                                <div class="video-image-play-icon">
-                                    <span class="gobyArtIcon active">c</span>
-                                    <span class="gobyArtIcon">a</span>
-                                </div>
-                            </a>
+                @foreach($videoArtist as $file)
+                    <div class="item-video-slider grid-item">
+                        <div class="model-video-wrapper video_16_9">
+                            <div class="video-inner">
+                                {{--//www.youtube.com/embed/f4Py54JZC8M--}}
+                                <a  class="video-slider-image-wrapper" data-src="{{ $file['file_link'] }}"
+                                    style="background-image: url({{asset('assets/upload/'.$file['artist_type'].'/'. $file['artist_name'].'/'.$file['file_name'])}});" tabindex="0">
+                                    <div class="video-image-overlay"></div>
+                                    <div class="video-image-play-icon">
+                                        <span class="gobyArtIcon active">c</span>
+                                        <span class="gobyArtIcon">a</span>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="item-video-slider grid-item">
-                    <div class="model-video-wrapper video_16_9">
-                        <div class="video-inner">
-                            <a  class="video-slider-image-wrapper" data-src="//player.vimeo.com/video/171718759?color=c9ff23&title=0&byline=0&portrait=0"
-                                style="background-image: url({{asset('assets/images/video/2.jpg')}});" tabindex="0">
-                                <div class="video-image-overlay"></div>
-                                <div class="video-image-play-icon">
-                                    <span class="gobyArtIcon active">c</span>
-                                    <span class="gobyArtIcon">a</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
 
             </div>
             <div class="video-bt-left-wrapper">
@@ -45,3 +35,4 @@
         </div>
     </div>
 </div>
+@endif

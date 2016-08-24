@@ -15,7 +15,7 @@
             <div id="partner-slideshow">
                 @foreach($partners as $partner)
                     <div>
-                        <img alt="{{$partner['partner_name']}}" src="{{asset('assets/partner/'.$partner['partner_image'])}}">
+                        <img alt="{{$partner['partner_name']}}" src="{{asset('assets/upload/partner/'.$partner['partner_image'])}}">
                     </div>
                 @endforeach
 
