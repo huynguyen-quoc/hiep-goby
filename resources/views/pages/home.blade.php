@@ -24,8 +24,8 @@
                         @if(isset($artistTypes))
                             @foreach($artistTypes as $artistType)
                                 <div class="search-item">
-                                    <input type="checkbox" name="iCheck" value="{{ $artistType['type_slug']}}">
-                                    <label class="">{{ $artistType['type_name']}}</label>
+                                    <input type="checkbox" id="icheck_{{ $artistType['type_slug']}}" name="iCheck" value="{{ $artistType['type_slug']}}">
+                                    <label for="icheck_{{ $artistType['type_slug']}}" class="">{{ $artistType['type_name']}}</label>
                                 </div>
                             @endforeach
                         @endif
@@ -50,7 +50,7 @@
                             {{--<label class="">Nghệ Sĩ Khác</label>--}}
                         {{--</div>--}}
                         <div class="search-item">
-                            <a href="" class="btn btn-inverted btn-round text-uppercase">Khám Phá Ngay</a>
+                            <a type="button" id="filter_btn"  class="btn btn-inverted btn-round text-uppercase">Khám Phá Ngay</a>
                         </div>
                     </div>
                 </div>
@@ -133,6 +133,15 @@
                         }
                     }
                 ]
+            });
+            $("#filter_btn").on('click' , function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                var data = $.map($('input[name="iCheck"]:checked'), function(item, index){
+                   return $(item).val();
+                });
+                if(data.length <= 0) return;
+                window.location.href='/danh-sach-nghe-si/' + data.join('_');
             });
         })
 

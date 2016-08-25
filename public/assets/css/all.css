@@ -767,6 +767,9 @@ u {
 .model-is-active {
   display: none; }
 
+.grid-model-list {
+  min-height: 300px; }
+
 .is-not-touch .model:hover .model-is-active {
   display: inline; }
 
@@ -1267,7 +1270,8 @@ img.image-loaded {
         display: inline-block; }
         .artist-type-wrapper .artist-type-content .artist-type-content-inner .form-search .search-item label {
           padding: 0 1.2rem;
-          font-size: 1.4rem; }
+          font-size: 1.4rem;
+          cursor: pointer; }
         .artist-type-wrapper .artist-type-content .artist-type-content-inner .form-search .search-item .btn {
           text-transform: uppercase;
           text-align: center;

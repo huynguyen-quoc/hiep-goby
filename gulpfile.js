@@ -34,6 +34,9 @@ gulp.task("copyfiles", function() {
   gulp.src("vendor/bower_dl/crypto-js/crypto-js.js")
         .pipe(gulp.dest("resources/assets/js/"));
 
+    gulp.src("vendor/bower_dl/jquery-infinite-scroll/jquery.infinitescroll.js")
+        .pipe(gulp.dest("resources/assets/js/"));
+
   gulp.src("vendor/bower_dl/jquery_lazyload/jquery.lazyload.js")
     .pipe(gulp.dest("resources/assets/js/"));
   //Vendor
@@ -98,6 +101,7 @@ elixir(function(mix) {
       'js/imagesloaded.js',
       'js/jquery.hoverIntent.js',
       'js/slick.js',
+      'js/jquery.infinitescroll.js',
       'js/crypto-js.js'
     ],
     'public/assets/js/all.js',

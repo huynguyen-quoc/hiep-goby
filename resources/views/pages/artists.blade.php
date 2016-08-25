@@ -32,7 +32,7 @@
 @endsection
 @section("scripts")
     <script type="text/javascript">
-
+        var index = 0;
         //POP OVER
         var showPopover=function(event){
             window.clearTimeout(window.showPopoverTimeout);
@@ -147,7 +147,6 @@
                 contentType:"application/json; charset=utf-8",
                 dataType:"json",
                 success: function(data){
-                    console.log(data);
                     $('#model-image-popover-grid .grid-model-image-popover .grid-model-image-popover-column').empty();
                     if(data.length > 0){
                         var template  =  '<div class="grid-item"> <img src="/assets/upload/' + data[0].artist_type + '/' + data[0].artist_name + '/' + data[0].file_name + '"></div>';
@@ -181,6 +180,94 @@
 //                }
 //            });
         };
+
+        function element_in_scroll(elem)
+        {
+            var docViewTop = $(window).scrollTop();
+            var docViewBottom = docViewTop + $(window).height();
+
+            var elemTop = $(elem).offset().top;
+            var elemBottom = elemTop + $(elem).height();
+
+            return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+        }
+
+        function appendData(msg){
+            var base64 =  msg;
+            var wordArray = CryptoJS.enc.Utf8.parse(base64);
+            var base64 = CryptoJS.enc.Base64.stringify(wordArray);
+            var imageUrl = 'assets/upload/' + msg['artist_type_slug']  + "/" + msg['artist_slug']  + "/" + msg['artist_avatar'] ;
+            var temp = '<div class="masonry-brick"> ' +
+                    '<article class="model grid-item" data-artist="' + base64 + '">' +
+                            " <a href='/nghe-si/"+ msg['artist_slug'] + "'  >" +
+                             "<div class='model-img-wrapper model-background-img-wrapper'" +
+                                " style='background-image: url(" + imageUrl +")'>" +
+                                    " <div class='model-name-box'>" +
+                                    "   <span class='model-name' data-name='" + msg['artist_name']  + "'></span>" +
+                                    ' </div>' +
+                                      '<div class="wishlist-icon-wrapper in-wishlist" >' +
+                                            '<div class="">' +
+                                        '<span class="model-is-active gobyArtIcon">D</span>' +
+                                        '<span class="gobyArtIcon">S</span>' +
+                                        '</div>' +
+                                        '</div>' +
+                                        '<div class="wishlist-toggle-wrapper">' +
+                                        '<div class="in-wishlist">' +
+                                        '<span class="icon-label s_hidden">Shortlist remove</span>' +
+                                '<span class="icon-label l_hidden m_hidden">Shortlist </span>' +
+                                        '<span class="sofaIcon l_hidden m_hidden">D</span>' +
+                                        '</div>'  +
+                                        '<div class="not-in-wishlist">' +
+                                        '<span class="icon-label s_hidden">Add to shortlist</span>' +
+                                '<span class="icon-label l_hidden m_hidden">Shortlist +</span>' +
+                                        '</div>' +
+                                        '</div>' +
+
+                                        '</div>' +
+                                        '</a>' +
+                                        '<div class="model-name-wrapper">' +
+                                        '<a href="#">' +
+                                        '<span class="model-name ">' + msg['artist_name'] + '</span>' +
+                                        '</a>' +
+                                        '</div>' +
+                                        '</article>' +
+                                        '</div>';
+            var $grid = $('.grid-masonry');
+            $grid.append( $(temp) )
+        }
+
+        function scrollData(){
+            if (element_in_scroll(".masonry-brick:last")) {
+                $(document).unbind('scroll');
+                $('#loading-more-btn').html('<span class="gobyArtIcon medium">F</span><br>Loading...');
+                index += 1;
+                $.ajax({
+                    type: "GET",
+                    url: document.location.href,
+                    data: { page: index},
+                    contentType:"application/json; charset=utf-8",
+                    dataType:"json",
+                }).done(function( msg ) {
+                    if (msg.artists.length != 0) {
+                        var currentTotal = index * 15;
+                        if(msg.total <= currentTotal ) {
+                            $(document).scroll(function (e) {
+                                scrollData();
+                            });
+                        }else{
+                            $('#loading-more-btn').parent().remove();
+                        }
+                        $.each(msg.artists, function(){
+                            appendData(this);
+                        });
+                        var $grid = $('.grid-masonry');
+                        $grid.masonry("reloadItems").masonry("layout");
+                    }
+                    $('#loading-more-btn').html('<span class="gobyArtIcon medium">F</span><br>Load More');
+                });
+            };
+        }
+
         $(function () {
             $('body').toggleClass('artists');
             $('.loader-container').toggleClass("active");
@@ -189,7 +276,12 @@
             $('.grid-masonry').masonry({
                 columnWidth: '.grid-column-size',
                 itemSelector: '.masonry-brick',
-                percentPosition: true
+                percentPosition: true,
+                transitionDuration: 1.5
+            });
+
+            $(document).scroll(function(e){
+                scrollData();
             });
 
             $(".grid-item").mouseenter(function(e){

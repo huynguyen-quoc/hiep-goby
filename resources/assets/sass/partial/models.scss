@@ -5,7 +5,9 @@
 .model-is-active{
   display: none;
 }
-
+.grid-model-list {
+  min-height: 300px;
+}
 .is-not-touch {
   .model {
     &:hover {

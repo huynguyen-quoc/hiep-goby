@@ -3,17 +3,26 @@
 namespace App\Http\Controllers;
 use View;
 use DB;
+use Illuminate\Http\Response;
+use Illuminate\Http\Request;
 
 class ArtistsController extends Controller
 {
-    public function index($category = ''){
+    public function index(Request $request , $category = ''){
         $filter = ["A", "B", "C", "D", "E", "F", "G", "H", "Y", "G", "K", "L", "M" ,"N", "O", "P", "Q", "S", "T", "U", "V", "W", "X", "Y" ,"Z"];
-
+        $page = $request->input('page');
+        $pageSize = 15;
+        if(!$page) {
+            $page = 0 * $pageSize;
+        }else{
+            $page = $page * $pageSize;
+        }
         //get artist hot
-        $artists = DB::select('call SP_GET_ALL_ARTIST(?, ?,?);', array($category, 15, 0));
+        $artists = DB::select('call SP_GET_ALL_ARTIST(?, ?, ?);', array(str_replace('_', ',',$category), $pageSize, $page));
 
         $artists = json_decode(json_encode($artists), true);
         $artistFinal = [];
+
         foreach($artists as $artist) {
             $artistDetail = $artist;
             $artistInformation = $artistDetail['artist_information'];
@@ -52,8 +61,17 @@ class ArtistsController extends Controller
             array_push($artistFinal, $artist);
         }
 
-
-        return View::make('pages.artists', [ "artistFilter" => $filter, 'artists' => $artistFinal ] );
+        $total = DB::select('call SP_TOTAL_ARTIST(?)', array($category));
+        $total = json_decode(json_encode($total), true);
+        if ($request->wantsJson()) {
+            $response = array(
+                "artists" => $artistFinal,
+                "total" => reset($total)['total']
+            );
+            return (new Response($response, 200));
+        }else {
+            return View::make('pages.artists', ["artistFilter" => $filter, 'artists' => $artistFinal, 'totalArtist' => reset($total)['total']]);
+        }
     }
 
     public function detail($slug = ''){

@@ -1,17 +1,18 @@
-@if(isset($artists) && count($artists) > 0)
+
 <div class="full-width bg-white col_padding_bottom">
-    <div class="content">
+    <div class="content scroll">
         <div class="headbox">
             <span class="text_left text-uppercase">Nghệ Sĩ GobyArt</span>
         </div>
+        <hr class="divider">
+        @if(isset($artists) && count($artists) > 0)
         <div class="loader-container active" >
             <div class="content">
                 <div class="gobyArtIcon spinner">S</div>
                 <div class="icon-label">Loading</div>
             </div>
         </div>
-        <hr class="divider">
-        <div class="grid-masonry">
+        <div class="scroll grid-masonry grid-model-list">
             <div class="grid-column-size"></div>
             @foreach($artists as $artist)
                 <div class="masonry-brick">
@@ -46,7 +47,7 @@
                         <div class="model-name-wrapper">
                             <a href="#">
                                     <span class="model-name ">
-                                      Kim Ngan
+                                   {{ $artist['artist_name'] }}
                                     </span>
                             </a>
                         </div>
@@ -54,11 +55,21 @@
                 </div>
             @endforeach
         </div>
+            @if(count($artists) < $totalArtist)
+            <div class="text-center">
+                <a id="loading-more-btn" class="button-more">
+                    <span class="gobyArtIcon medium">F</span><br>Load More
+                </a>
+            </div>
+            @endif
+        @else
+            <div >
+                <div><br>Không tìm thấy kết quả!</div>
+            </div>
+            <div class="grid-masonry  grid-model-list">
+            </div>
+        @endif
     </div>
-    <div class="text-center">
-        <a class="button-more">
-            <span class="gobyArtIcon medium">F</span><br>Load More
-        </a>
-    </div>
+
 </div>
-@endif
+

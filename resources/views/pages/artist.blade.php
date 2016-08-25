@@ -15,7 +15,7 @@
                 <div class="headbox">
                     <div class="rel-container">
                         <div class="model-back-link s_hidden">
-                            <a href="" ><span class="gobyArtIcon">;</span></a>
+                            <a href="" onclick="    window.history.back();"><span class="gobyArtIcon">;</span></a>
                         </div>
                         <span class="model-detail-name">{{ isset($artistDetail) ? $artistDetail['artist_full_name'] : '' }}</span>
                     </div>
