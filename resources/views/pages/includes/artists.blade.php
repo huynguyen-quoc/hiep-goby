@@ -1,3 +1,4 @@
+@if(isset($artists) && count($artists) > 0)
 <div class="full-width bg-white col_padding_bottom">
     <div class="content">
         <div class="headbox">
@@ -12,402 +13,52 @@
         <hr class="divider">
         <div class="grid-masonry">
             <div class="grid-column-size"></div>
-            <div class="masonry-brick">
-                <article class="model grid-item">
-                    <a href="/nghe-si/test" >
-                        <div class="model-img-wrapper model-background-img-wrapper"
-                             style="background-image: url({{ asset('assets/images/model_2.jpg')}})">
-                            <div class="model-name-box">
-                                <span class="model-name" data-name="Kim Ngan"></span>
-                            </div>
-
-                            <div class="wishlist-icon-wrapper in-wishlist" >
-                                <div class="">
-                                    <span class="model-is-active gobyArtIcon">D</span>
-                                    <span class="gobyArtIcon">S</span>
+            @foreach($artists as $artist)
+                <div class="masonry-brick">
+                    <article class="model grid-item" data-artist="{{ base64_encode(json_encode($artist)) }}">
+                        <a href="/nghe-si/{{ $artist['artist_slug'] }}"  >
+                            <div class="model-img-wrapper model-background-img-wrapper"
+                                 style="background-image: url({{ asset('assets/upload/'.$artist['artist_type_slug'].'/'. $artist['artist_slug'].'/'. $artist['artist_avatar'])}})">
+                                <div class="model-name-box">
+                                    <span class="model-name" data-name="{{ $artist['artist_name'] }}"></span>
                                 </div>
-                            </div>
 
-                            <div class="wishlist-toggle-wrapper">
-                                <div class="in-wishlist">
-                                    <span class="icon-label s_hidden">Shortlist remove</span>
-                                    <span class="icon-label l_hidden m_hidden">Shortlist </span>
-                                    <span class="sofaIcon l_hidden m_hidden">D</span>
+                                <div class="wishlist-icon-wrapper in-wishlist" >
+                                    <div class="">
+                                        <span class="model-is-active gobyArtIcon">D</span>
+                                        <span class="gobyArtIcon">S</span>
+                                    </div>
                                 </div>
-                                <div class="not-in-wishlist">
-                                    <span class="icon-label s_hidden">Add to shortlist</span>
-                                    <span class="icon-label l_hidden m_hidden">Shortlist +</span>
+                                <div class="wishlist-toggle-wrapper">
+                                    <div class="in-wishlist">
+                                        <span class="icon-label s_hidden">Shortlist remove</span>
+                                        <span class="icon-label l_hidden m_hidden">Shortlist </span>
+                                        <span class="sofaIcon l_hidden m_hidden">D</span>
+                                    </div>
+                                    <div class="not-in-wishlist">
+                                        <span class="icon-label s_hidden">Add to shortlist</span>
+                                        <span class="icon-label l_hidden m_hidden">Shortlist +</span>
+                                    </div>
                                 </div>
-                            </div>
 
-                        </div>
-                    </a>
-                    <div class="model-name-wrapper">
-                        <a href="#">
-                                <span class="model-name ">
-                                  Kim Ngan
-                                </span>
+                            </div>
                         </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="model grid-item wishlist">
-                    <a href="/nghe-si/test" >
-                        <div class="model-img-wrapper model-background-img-wrapper"
-                             style="background-image: url({{ asset('assets/images/model_2.jpg')}})">
-                            <div class="model-name-box">
-                                <span class="model-name" data-name="Kim Ngan"></span>
-                            </div>
-
-                            <div class="wishlist-icon-wrapper in-wishlist" >
-                                <div class="">
-                                    <span class="model-is-active gobyArtIcon">D</span>
-                                    <span class="gobyArtIcon">S</span>
-                                </div>
-                            </div>
-
-                            <div class="wishlist-toggle-wrapper">
-                                <div class="in-wishlist">
-                                    <span class="icon-label s_hidden">Shortlist remove</span>
-                                    <span class="icon-label l_hidden m_hidden">Shortlist </span>
-                                    <span class="sofaIcon l_hidden m_hidden">D</span>
-                                </div>
-                                <div class="not-in-wishlist">
-                                    <span class="icon-label s_hidden">Add to shortlist</span>
-                                    <span class="icon-label l_hidden m_hidden">Shortlist +</span>
-                                </div>
-                            </div>
-
+                        <div class="model-name-wrapper">
+                            <a href="#">
+                                    <span class="model-name ">
+                                      Kim Ngan
+                                    </span>
+                            </a>
                         </div>
-                    </a>
-                    <div class="model-name-wrapper">
-                        <a href="#">
-                                <span class="model-name ">
-                                  Kim Ngan
-                                </span>
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="model grid-item">
-                    <a href="/nghe-si/test" >
-                        <div class="model-img-wrapper model-background-img-wrapper"
-                             style="background-image: url({{ asset('assets/images/model_4.jpg')}})">
-                            <div class="model-name-box">
-                                <span class="model-name" data-name="Kim Ngan"></span>
-                            </div>
-
-                            <div class="wishlist-icon-wrapper in-wishlist" >
-                                <div class="">
-                                    <span class="model-is-active gobyArtIcon">D</span>
-                                    <span class="gobyArtIcon">S</span>
-                                </div>
-                            </div>
-
-                            <div class="wishlist-toggle-wrapper">
-                                <div class="in-wishlist">
-                                    <span class="icon-label s_hidden">Shortlist remove</span>
-                                    <span class="icon-label l_hidden m_hidden">Shortlist </span>
-                                    <span class="sofaIcon l_hidden m_hidden">D</span>
-                                </div>
-                                <div class="not-in-wishlist">
-                                    <span class="icon-label s_hidden">Add to shortlist</span>
-                                    <span class="icon-label l_hidden m_hidden">Shortlist +</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </a>
-                    <div class="model-name-wrapper">
-                        <a href="#">
-                                <span class="model-name ">
-                                  Kim Ngan
-                                </span>
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="model grid-item">
-                    <a href="/nghe-si/test" >
-                        <div class="model-img-wrapper model-background-img-wrapper"
-                             style="background-image: url({{ asset('assets/images/model_3.jpg')}})">
-                            <div class="model-name-box">
-                                <span class="model-name" data-name="Kim Ngan"></span>
-                            </div>
-
-                            <div class="wishlist-icon-wrapper in-wishlist" >
-                                <div class="">
-                                    <span class="model-is-active gobyArtIcon">D</span>
-                                    <span class="gobyArtIcon">S</span>
-                                </div>
-                            </div>
-
-                            <div class="wishlist-toggle-wrapper">
-                                <div class="in-wishlist">
-                                    <span class="icon-label s_hidden">Shortlist remove</span>
-                                    <span class="icon-label l_hidden m_hidden">Shortlist </span>
-                                    <span class="sofaIcon l_hidden m_hidden">D</span>
-                                </div>
-                                <div class="not-in-wishlist">
-                                    <span class="icon-label s_hidden">Add to shortlist</span>
-                                    <span class="icon-label l_hidden m_hidden">Shortlist +</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </a>
-                    <div class="model-name-wrapper">
-                        <a href="#">
-                                <span class="model-name ">
-                                  Kim Ngan
-                                </span>
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="model grid-item">
-                    <a href="/nghe-si/test" >
-                        <div class="model-img-wrapper model-background-img-wrapper"
-                             style="background-image: url({{ asset('assets/images/model_1.jpg')}})">
-                            <div class="model-name-box">
-                                <span class="model-name" data-name="Kim Ngan"></span>
-                            </div>
-
-                            <div class="wishlist-icon-wrapper in-wishlist" >
-                                <div class="">
-                                    <span class="model-is-active gobyArtIcon">D</span>
-                                    <span class="gobyArtIcon">S</span>
-                                </div>
-                            </div>
-
-                            <div class="wishlist-toggle-wrapper">
-                                <div class="in-wishlist">
-                                    <span class="icon-label s_hidden">Shortlist remove</span>
-                                    <span class="icon-label l_hidden m_hidden">Shortlist </span>
-                                    <span class="sofaIcon l_hidden m_hidden">D</span>
-                                </div>
-                                <div class="not-in-wishlist">
-                                    <span class="icon-label s_hidden">Add to shortlist</span>
-                                    <span class="icon-label l_hidden m_hidden">Shortlist +</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </a>
-                    <div class="model-name-wrapper">
-                        <a href="#">
-                                <span class="model-name ">
-                                  Kim Ngan
-                                </span>
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="model grid-item">
-                    <a href="/nghe-si/test" >
-                        <div class="model-img-wrapper model-background-img-wrapper"
-                             style="background-image: url({{ asset('assets/images/model_2.jpg')}})">
-                            <div class="model-name-box">
-                                <span class="model-name" data-name="Kim Ngan"></span>
-                            </div>
-
-                            <div class="wishlist-icon-wrapper in-wishlist" >
-                                <div class="">
-                                    <span class="model-is-active gobyArtIcon">D</span>
-                                    <span class="gobyArtIcon">S</span>
-                                </div>
-                            </div>
-
-                            <div class="wishlist-toggle-wrapper">
-                                <div class="in-wishlist">
-                                    <span class="icon-label s_hidden">Shortlist remove</span>
-                                    <span class="icon-label l_hidden m_hidden">Shortlist </span>
-                                    <span class="sofaIcon l_hidden m_hidden">D</span>
-                                </div>
-                                <div class="not-in-wishlist">
-                                    <span class="icon-label s_hidden">Add to shortlist</span>
-                                    <span class="icon-label l_hidden m_hidden">Shortlist +</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </a>
-                    <div class="model-name-wrapper">
-                        <a href="#">
-                                <span class="model-name ">
-                                  Kim Ngan
-                                </span>
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="model grid-item">
-                    <a href="/nghe-si/test" >
-                        <div class="model-img-wrapper model-background-img-wrapper"
-                             style="background-image: url({{ asset('assets/images/model_2.jpg')}})">
-                            <div class="model-name-box">
-                                <span class="model-name" data-name="Kim Ngan"></span>
-                            </div>
-
-                            <div class="wishlist-icon-wrapper in-wishlist" >
-                                <div class="">
-                                    <span class="model-is-active gobyArtIcon">D</span>
-                                    <span class="gobyArtIcon">S</span>
-                                </div>
-                            </div>
-
-                            <div class="wishlist-toggle-wrapper">
-                                <div class="in-wishlist">
-                                    <span class="icon-label s_hidden">Shortlist remove</span>
-                                    <span class="icon-label l_hidden m_hidden">Shortlist </span>
-                                    <span class="sofaIcon l_hidden m_hidden">D</span>
-                                </div>
-                                <div class="not-in-wishlist">
-                                    <span class="icon-label s_hidden">Add to shortlist</span>
-                                    <span class="icon-label l_hidden m_hidden">Shortlist +</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </a>
-                    <div class="model-name-wrapper">
-                        <a href="#">
-                                <span class="model-name ">
-                                  Kim Ngan
-                                </span>
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="model grid-item">
-                    <a href="/nghe-si/test" >
-                        <div class="model-img-wrapper model-background-img-wrapper"
-                             style="background-image: url({{ asset('assets/images/model_2.jpg')}})">
-                            <div class="model-name-box">
-                                <span class="model-name" data-name="Kim Ngan"></span>
-                            </div>
-
-                            <div class="wishlist-icon-wrapper in-wishlist" >
-                                <div class="">
-                                    <span class="model-is-active gobyArtIcon">D</span>
-                                    <span class="gobyArtIcon">S</span>
-                                </div>
-                            </div>
-
-                            <div class="wishlist-toggle-wrapper">
-                                <div class="in-wishlist">
-                                    <span class="icon-label s_hidden">Shortlist remove</span>
-                                    <span class="icon-label l_hidden m_hidden">Shortlist </span>
-                                    <span class="sofaIcon l_hidden m_hidden">D</span>
-                                </div>
-                                <div class="not-in-wishlist">
-                                    <span class="icon-label s_hidden">Add to shortlist</span>
-                                    <span class="icon-label l_hidden m_hidden">Shortlist +</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </a>
-                    <div class="model-name-wrapper">
-                        <a href="#">
-                                <span class="model-name ">
-                                  Kim Ngan
-                                </span>
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="model grid-item">
-                    <a href="/nghe-si/test" >
-                        <div class="model-img-wrapper model-background-img-wrapper"
-                             style="background-image: url({{ asset('assets/images/model_2.jpg')}})">
-                            <div class="model-name-box">
-                                <span class="model-name" data-name="Kim Ngan"></span>
-                            </div>
-
-                            <div class="wishlist-icon-wrapper in-wishlist" >
-                                <div class="">
-                                    <span class="model-is-active gobyArtIcon">D</span>
-                                    <span class="gobyArtIcon">S</span>
-                                </div>
-                            </div>
-
-                            <div class="wishlist-toggle-wrapper">
-                                <div class="in-wishlist">
-                                    <span class="icon-label s_hidden">Shortlist remove</span>
-                                    <span class="icon-label l_hidden m_hidden">Shortlist </span>
-                                    <span class="sofaIcon l_hidden m_hidden">D</span>
-                                </div>
-                                <div class="not-in-wishlist">
-                                    <span class="icon-label s_hidden">Add to shortlist</span>
-                                    <span class="icon-label l_hidden m_hidden">Shortlist +</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </a>
-                    <div class="model-name-wrapper">
-                        <a href="#">
-                                <span class="model-name ">
-                                  Kim Ngan
-                                </span>
-                        </a>
-                    </div>
-                </article>
-            </div>
-            <div class="masonry-brick">
-                <article class="model grid-item">
-                    <a href="/nghe-si/test" >
-                        <div class="model-img-wrapper model-background-img-wrapper"
-                             style="background-image: url({{ asset('assets/images/model_4.jpg')}})">
-                            <div class="model-name-box">
-                                <span class="model-name" data-name="Kim Ngan"></span>
-                            </div>
-
-                            <div class="wishlist-icon-wrapper in-wishlist" >
-                                <div class="">
-                                    <span class="model-is-active gobyArtIcon">D</span>
-                                    <span class="gobyArtIcon">S</span>
-                                </div>
-                            </div>
-
-                            <div class="wishlist-toggle-wrapper">
-                                <div class="in-wishlist">
-                                    <span class="icon-label s_hidden">Shortlist remove</span>
-                                    <span class="icon-label l_hidden m_hidden">Shortlist </span>
-                                    <span class="sofaIcon l_hidden m_hidden">D</span>
-                                </div>
-                                <div class="not-in-wishlist">
-                                    <span class="icon-label s_hidden">Add to shortlist</span>
-                                    <span class="icon-label l_hidden m_hidden">Shortlist +</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </a>
-                    <div class="model-name-wrapper">
-                        <a href="#">
-                                <span class="model-name ">
-                                  Kim Ngan
-                                </span>
-                        </a>
-                    </div>
-                </article>
-            </div>
-
+                    </article>
+                </div>
+            @endforeach
         </div>
     </div>
     <div class="text-center">
-        <a class="button-more" href="/models">
+        <a class="button-more">
             <span class="gobyArtIcon medium">F</span><br>Load More
         </a>
     </div>
 </div>
+@endif

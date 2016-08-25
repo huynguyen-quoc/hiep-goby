@@ -6,9 +6,54 @@ use DB;
 
 class ArtistsController extends Controller
 {
-    public function index(){
+    public function index($category = ''){
         $filter = ["A", "B", "C", "D", "E", "F", "G", "H", "Y", "G", "K", "L", "M" ,"N", "O", "P", "Q", "S", "T", "U", "V", "W", "X", "Y" ,"Z"];
-        return View::make('pages.artists', [ "artistFilter" => $filter ] );
+
+        //get artist hot
+        $artists = DB::select('call SP_GET_ALL_ARTIST(?, ?,?);', array($category, 15, 0));
+
+        $artists = json_decode(json_encode($artists), true);
+        $artistFinal = [];
+        foreach($artists as $artist) {
+            $artistDetail = $artist;
+            $artistInformation = $artistDetail['artist_information'];
+            $artistInformation = json_decode($artistInformation, true);
+            $artistOptions1 = DB::select('call SP_GET_OPTIONS_BY_TYPE(?);', array('ARTIST_OPTIONS_1'));
+            $artistOptions1 = json_decode(json_encode($artistOptions1), true);
+            $artistExtra1 = [];
+            foreach ($artistOptions1 as $option) {
+                $name = $option['option_value'];
+                if (isset($artistInformation[$name])) {
+                    $artistData = array(
+                        'title' => $option['option_title'],
+                        'value' => $artistInformation[$name]
+                    );
+
+                    array_push($artistExtra1, $artistData);
+                }
+            }
+            $artistExtra2 = [];
+            $artistOptions2 = DB::select('call SP_GET_OPTIONS_BY_TYPE(?);', array('ARTIST_OPTIONS_2'));
+            $artistOptions2 = json_decode(json_encode($artistOptions2), true);
+            foreach ($artistOptions2 as $option) {
+                $name = $option['option_value'];
+                if (isset($artistInformation[$name])) {
+                    $artistData = array(
+                        'title' => $option['option_title'],
+                        'value' => $artistInformation[$name]
+                    );
+
+                    array_push($artistExtra2, $artistData);
+                }
+            }
+            unset($artist['artist_information']);
+            $artist['artist_extra_1'] = $artistExtra1;
+            $artist['artist_extra_2'] = $artistExtra2;
+            array_push($artistFinal, $artist);
+        }
+
+
+        return View::make('pages.artists', [ "artistFilter" => $filter, 'artists' => $artistFinal ] );
     }
 
     public function detail($slug = ''){

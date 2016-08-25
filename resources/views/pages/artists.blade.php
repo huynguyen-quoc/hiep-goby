@@ -114,6 +114,73 @@
             $('#model-image-popover').fadeOut(100);
         };
 
+        var initImagePopover=function(event, model){
+            var information_data_1 = model.artist_extra_1;
+            var information_data_2 = model.artist_extra_2;
+            $('#model-image-popover .model-info-model-name').html(model['artist_full_name']);
+            $('#model-image-popover .model-type').html("(" + model['artist_type_name'] + ")");
+            var information1Data = '';
+            var information2Data = '';
+            $('#model-image-popover .model-info-col-1').empty();
+            $('#model-image-popover .model-info-col-2').empty();
+
+            $.each(information_data_1 , function(){
+                var template = '<div class="model-info-detail">' +
+                        '<span class="model-detail-label">' + this.title + '</span>' +
+                        '<span class="model-detail-value" >' + this.value + '</span>' +
+                        '</div>';
+                information1Data += template;
+            });
+            $.each(information_data_2 , function(){
+                var template = '<div class="model-info-detail">' +
+                        '<span class="model-detail-label">' + this.title + '</span>' +
+                        '<span class="model-detail-value" >' + this.value + '</span>' +
+                        '</div>';
+                information2Data += template;
+            });
+            $('#model-image-popover .model-info-col-1').html(information1Data);
+            $('#model-image-popover .model-info-col-2').html(information2Data);
+
+            $.ajax({
+                url : '/api/image/preview/' + model.artist_slug,
+                type:"GET",
+                contentType:"application/json; charset=utf-8",
+                dataType:"json",
+                success: function(data){
+                    console.log(data);
+                    $('#model-image-popover-grid .grid-model-image-popover .grid-model-image-popover-column').empty();
+                    if(data.length > 0){
+                        var template  =  '<div class="grid-item"> <img src="/assets/upload/' + data[0].artist_type + '/' + data[0].artist_name + '/' + data[0].file_name + '"></div>';
+                        if(data.length > 1) {
+                            template += '<div class="grid-item"> <img src="/assets/upload/' +  data[1].artist_type+ '/' + data[1].artist_name + '/' +  data[1].file_name + '"></div>';
+                        }
+                        $('#model-image-popover-grid .grid-model-image-popover .grid-model-image-popover-column.column-1').html(template);
+                        template  = '';
+                        if(data.length > 2) {
+                            template +=' <div class="grid-item"> <img src="/assets/upload/' + data[2].artist_type + '/' + data[2].artist_name + '/' + data[2].file_name + '"></div>';
+                            if(data.length > 3) {
+                                template += '<div class="grid-item"> <img src="/assets/upload/' +  data[3].artist_type+ '/' + data[3].artist_name + '/' +  data[3].file_name + '"></div>';
+                            }
+                        }
+                        $('#model-image-popover-grid .grid-model-image-popover .grid-model-image-popover-column.column-2').html(template);
+                    }
+                }
+            });
+
+           //   var requestId = model['artist_slug'] + "_" + Math.random();
+//            if(requestId!=$scope.imagePopover.requestId){
+//                $scope.imagePopover.images=$scope.defaultImagePopoverImageArray;
+//            }
+//            $scope.imagePopover.requestId=requestId;
+//            $scope.imagePopover.isActive=true;
+//            $scope.imagePopover.model=model;
+//
+//            ImageSet.server().get({imageTypeString:'preview',modelString:model.name},function(data){
+//                if(data.$resolved && (!data.data!=undefined) && (requestId==$scope.imagePopover.requestId)){
+//                    $scope.imagePopover.images=ImageSet.getImagesFromImageSet(data);
+//                }
+//            });
+        };
         $(function () {
             $('body').toggleClass('artists');
             $('.loader-container').toggleClass("active");
@@ -123,6 +190,16 @@
                 columnWidth: '.grid-column-size',
                 itemSelector: '.masonry-brick',
                 percentPosition: true
+            });
+
+            $(".grid-item").mouseenter(function(e){
+                var $this = $(this);
+                var artist = $this.data('artist');
+                if(artist) {
+                    var words = CryptoJS.enc.Base64.parse(artist);
+                    var textString = CryptoJS.enc.Utf8.stringify(words);
+                    initImagePopover(e, JSON.parse(textString))
+                }
             });
 
             $(".grid-item").hoverIntent({

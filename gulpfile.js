@@ -31,6 +31,9 @@ gulp.task("copyfiles", function() {
   gulp.src("vendor/bower_dl/imagesloaded/imagesloaded.js")
     .pipe(gulp.dest("resources/assets/js/"));
 
+  gulp.src("vendor/bower_dl/crypto-js/crypto-js.js")
+        .pipe(gulp.dest("resources/assets/js/"));
+
   gulp.src("vendor/bower_dl/jquery_lazyload/jquery.lazyload.js")
     .pipe(gulp.dest("resources/assets/js/"));
   //Vendor
@@ -94,7 +97,8 @@ elixir(function(mix) {
       'js/ev-emitter.js',
       'js/imagesloaded.js',
       'js/jquery.hoverIntent.js',
-      'js/slick.js'
+      'js/slick.js',
+      'js/crypto-js.js'
     ],
     'public/assets/js/all.js',
     'resources/assets'

@@ -1288,9 +1288,9 @@ img.image-loaded {
 .model-info {
   float: left;
   width: 59.95%;
-  text-transform: lowercase; }
+  text-transform: capitalize; }
   .model-info .model-detail-label {
-    text-transform: lowercase;
+    text-transform: capitalize;
     display: inline-block;
     width: 5rem; }
 
@@ -1303,7 +1303,15 @@ img.image-loaded {
   position: absolute;
   display: none;
   z-index: 28;
-  font-family: "RobotoCondensed-Light", "Roboto-Light", "Helvetica Neue", "Arial", sans-serif; }
+  font-family: "Roboto-Light", "Helvetica Neue", "Arial", sans-serif; }
+  #model-image-popover .model-type {
+    display: inline-block;
+    opacity: 0.5;
+    font-size: 1.4em; }
+  #model-image-popover .model-info-model-name {
+    font-size: 1em;
+    font-weight: 500;
+    display: inline-block; }
   #model-image-popover .model-info {
     position: relative;
     float: none;
@@ -1326,7 +1334,7 @@ img.image-loaded {
     #model-image-popover .model-info .model-info-detail {
       line-height: 200%; }
     #model-image-popover .model-info .model-detail-label {
-      width: 3rem; }
+      width: 5em; }
     #model-image-popover .model-info .model-detail-value {
       display: block;
       vertical-align: top; }

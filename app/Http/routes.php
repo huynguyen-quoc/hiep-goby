@@ -17,3 +17,9 @@ Route::get('/danh-sach-nghe-si/{slugs?}', 'ArtistsController@index');
 Route::get('/nghe-si/{slug}', 'ArtistsController@detail');
 Route::get('/quan-tam', 'WishListController@index');
 Route::get('/lien-he', 'ContactController@index');
+
+Route::group(['prefix' => 'api'], function () {
+    Route::group(['prefix' => 'image'], function () {
+        Route::get('preview/{slug}', "ImageController@getImagePreview");
+    });
+});

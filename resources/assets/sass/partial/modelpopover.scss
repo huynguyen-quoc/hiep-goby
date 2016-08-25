@@ -4,13 +4,14 @@
 .model-info {
   float: left;
   width: 59.95%;
-  text-transform: lowercase;
+  text-transform: capitalize;
   .model-detail-label {
-    text-transform: lowercase;
+    text-transform: capitalize;
     display: inline-block;
     width: 5rem;
   }
 }
+
 #model-image-popover-grid, #model-image-popover-info {
   position: absolute;
   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
@@ -22,7 +23,17 @@
   position: absolute;
   display: none;
   z-index: 28;
-  font-family: $font-family-condensed-light;
+  font-family: $font-family-light;
+  .model-type {
+    display: inline-block;
+    opacity: 0.5;
+    font-size: 1.4em;
+  }
+  .model-info-model-name {
+    font-size: 1em;
+    font-weight: 500;
+    display: inline-block;
+  }
   .model-info {
     position: relative;
     float: none;
@@ -50,7 +61,7 @@
       line-height: 200%;
     }
     .model-detail-label {
-      width: 3rem;
+      width: 5em;
     }
     .model-detail-value {
       display: block;
