@@ -111,6 +111,7 @@
                 itemSelector: '.masonry-brick',
                 percentPosition: true
             });
+
             $grid.imagesLoaded(function () {
                 $grid.masonry('layout');
             })

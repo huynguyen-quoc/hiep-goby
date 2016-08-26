@@ -5,6 +5,7 @@ use View;
 use DB;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class ArtistsController extends Controller
 {
@@ -58,19 +59,29 @@ class ArtistsController extends Controller
             unset($artist['artist_information']);
             $artist['artist_extra_1'] = $artistExtra1;
             $artist['artist_extra_2'] = $artistExtra2;
+            $slug = $artistDetail['artist_slug'];
+            $artist['added_cart'] = false;
+            foreach(Cart::content() as $row) {
+               if($row->id == $slug){
+                   $artist['added_cart'] = true;
+                   break;
+               }
+            }
             array_push($artistFinal, $artist);
         }
 
         $total = DB::select('call SP_TOTAL_ARTIST(?)', array($category));
         $total = json_decode(json_encode($total), true);
+        $totalPage = round((reset($total)['total']  - 1) / $pageSize);
         if ($request->wantsJson()) {
             $response = array(
                 "artists" => $artistFinal,
-                "total" => reset($total)['total']
+                "total_page" => $totalPage
             );
             return (new Response($response, 200));
         }else {
-            return View::make('pages.artists', ["artistFilter" => $filter, 'artists' => $artistFinal, 'totalArtist' => reset($total)['total']]);
+
+            return View::make('pages.artists', ["artistFilter" => $filter, 'artists' => $artistFinal, 'totalPage' => $totalPage]);
         }
     }
 

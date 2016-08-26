@@ -337,4 +337,32 @@ img {
 .slick-slide {
     outline: none;
 }
+.infinite-scroll-paging {
+    display: none;
+}
 
+.button-loading {
+    display: none;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 100%;
+    background-color: #BF1B7C;
+    text-indent: 500%;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.wishlist-counter {
+    color: #BF1B7C;
+    font-size: 1.2em;
+    position: relative;
+    font-weight: bold;
+    top: -0.5rem;
+    left: -0.5rem;
+}
+
+.wishlist-link {
+    top: 0.6rem;
+    position: relative;
+}

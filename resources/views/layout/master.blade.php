@@ -9,6 +9,7 @@
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale = 1, maximum-scale=1">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-touch-fullscreen" content="yes">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         {{--<link rel="icon" type="image/x-icon" href="_images/favicon.ico">--}}
         {{--<link rel="shortcut icon" type="image/x-icon" href="_common/images_sys/favicon.ico">--}}
 

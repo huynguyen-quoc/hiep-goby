@@ -37,10 +37,10 @@
                 <li><a href="/gioi-thieu">Giới Thiệu</a></li>
                 <li><a href="/lien-he">Liên Hệ</a></li>
                 <li>
-                    <a href="/quan-tam">
+                    <a href="/quan-tam" class="shopping-cart wishlist-link">
                         <i class="material-icons">&#xE87E;</i>
                     </a>
-                    </a>
+                    <span class="wishlist-counter">{{ \Gloudemans\Shoppingcart\Facades\Cart::content()->count() > 0 ? \Gloudemans\Shoppingcart\Facades\Cart::content()->count() : '' }}</span>
                 </li>
             </ul>
         </div>

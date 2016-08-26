@@ -22,4 +22,7 @@ Route::group(['prefix' => 'api'], function () {
     Route::group(['prefix' => 'image'], function () {
         Route::get('preview/{slug}', "ImageController@getImagePreview");
     });
+    Route::post('cart', "CartController@add");
+    Route::delete('cart/{slug}', "CartController@remove");
 });
+

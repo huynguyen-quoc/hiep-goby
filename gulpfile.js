@@ -108,7 +108,9 @@ elixir(function(mix) {
     'resources/assets'
   	);
     mix.scripts([
-            'js/common.js'
+            'js/common.js',
+            'js/artists.js',
+            'js/home.js',
         ],
         'public/assets/js/common.js',
         'resources/assets'

@@ -336,6 +336,32 @@ img {
 .slick-slide {
   outline: none; }
 
+.infinite-scroll-paging {
+  display: none; }
+
+.button-loading {
+  display: none;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 100%;
+  background-color: #BF1B7C;
+  text-indent: 500%;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 auto; }
+
+.wishlist-counter {
+  color: #BF1B7C;
+  font-size: 1.2em;
+  position: relative;
+  font-weight: bold;
+  top: -0.5rem;
+  left: -0.5rem; }
+
+.wishlist-link {
+  top: 0.6rem;
+  position: relative; }
+
 /*----------------------------------------------------------------*/
 /*  Fonts
 /*----------------------------------------------------------------*/
@@ -587,6 +613,26 @@ u {
 @keyframes spin {
   100% {
     transform: rotate(360deg); } }
+
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes zoomin {
+  from {
+    transform: scale(0); }
+  to {
+    transform: scale(1); } }
+
+@keyframes bounce {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.25); }
+  100% {
+    transform: scale(1); } }
 
 /*----------------------------------------------------------------*/
 /*  MASONRY
@@ -848,10 +894,21 @@ u {
   opacity: 0;
   webkit-transition: visibility 0.25s, opacity 0.25s;
   transition: visibility 0.25s, opacity 0.25s;
-  font-family: "RobotoCondensed-Light", "Roboto-Light", "Helvetica Neue", "Arial", sans-serif; }
+  font-family: "RobotoCondensed-Light", "Roboto-Light", "Helvetica Neue", "Arial", sans-serif;
+  animation-delay: .9s; }
+  .model .wishlist-toggle-wrapper .button-loading {
+    animation: zoomin infinite linear .75s; }
+  .model .wishlist-toggle-wrapper.loading {
+    cursor: progress; }
+    .model .wishlist-toggle-wrapper.loading .button-loading {
+      display: block; }
+    .model .wishlist-toggle-wrapper.loading .icon-label {
+      display: none; }
   .model .wishlist-toggle-wrapper .in-wishlist {
     background-color: rgba(175, 25, 125, 0.9);
     padding: 3% 0; }
+    .model .wishlist-toggle-wrapper .in-wishlist .button-loading {
+      background-color: #FFFFFF; }
 
 .model-img-wrapper {
   position: relative;

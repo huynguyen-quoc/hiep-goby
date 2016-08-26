@@ -124,10 +124,28 @@
     -o-transition: visibility 0.25s, opacity 0.25s;
     transition: visibility 0.25s, opacity 0.25s;
     font-family: $font-family-condensed-light;
+    -webkit-animation-delay: .9s;
+    animation-delay: .9s;
+    .button-loading {
+      -webkit-animation: zoomin infinite linear .75s;
+      animation: zoomin infinite linear .75s;
+    }
+     &.loading {
+       cursor: progress;
+       .button-loading {
+         display: block;
+       }
+       .icon-label {
+         display: none;
+       }
+     }
 
     .in-wishlist {
       background-color: rgba(175, 25, 125, 0.9);
       padding: 3% 0;
+      .button-loading {
+        background-color: #FFFFFF;
+      }
     }
   }
 }

@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesResources;
 use DB;
 use Illuminate\Support\Facades\Cache;
 use View;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class Controller extends BaseController
 {
@@ -36,6 +37,8 @@ class Controller extends BaseController
             $jsonOption = Cache::get('site_options');
             View::share('siteOptions', $jsonOption);
         }
+//        $cartValue = Cart::content();
+//        View::share('cart', $cartValue);
 
     }
 }

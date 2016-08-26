@@ -12,11 +12,12 @@
                 <div class="icon-label">Loading</div>
             </div>
         </div>
-        <div class="scroll grid-masonry grid-model-list">
+        <div class="grid-masonry grid-model-list">
             <div class="grid-column-size"></div>
+
             @foreach($artists as $artist)
                 <div class="masonry-brick">
-                    <article class="model grid-item" data-artist="{{ base64_encode(json_encode($artist)) }}">
+                    <article class="model grid-item {{ isset($artist['added_cart']) && $artist['added_cart'] == true ? 'wishlist' : '' }}" data-artist="{{ base64_encode(json_encode($artist)) }}">
                         <a href="/nghe-si/{{ $artist['artist_slug'] }}"  >
                             <div class="model-img-wrapper model-background-img-wrapper"
                                  style="background-image: url({{ asset('assets/upload/'.$artist['artist_type_slug'].'/'. $artist['artist_slug'].'/'. $artist['artist_avatar'])}})">
@@ -34,11 +35,13 @@
                                     <div class="in-wishlist">
                                         <span class="icon-label s_hidden">Shortlist remove</span>
                                         <span class="icon-label l_hidden m_hidden">Shortlist </span>
-                                        <span class="sofaIcon l_hidden m_hidden">D</span>
+                                        <span class="gobyArtIcon l_hidden m_hidden">D</span>
+                                        <span class="button-loading">Adding to cart...</span>
                                     </div>
                                     <div class="not-in-wishlist">
                                         <span class="icon-label s_hidden">Add to shortlist</span>
                                         <span class="icon-label l_hidden m_hidden">Shortlist +</span>
+                                        <span class="button-loading">Adding to cart...</span>
                                     </div>
                                 </div>
 
@@ -55,12 +58,18 @@
                 </div>
             @endforeach
         </div>
-            @if(count($artists) < $totalArtist)
+            @if($totalPage > 1)
             <div class="text-center">
                 <a id="loading-more-btn" class="button-more">
                     <span class="gobyArtIcon medium">F</span><br>Load More
                 </a>
             </div>
+
+            <nav id="pagination" class="infinite-scroll-paging">
+            @for($i = 1; $i <= $totalPage; $i++)
+                <p><a href="{{ Request::url().'?page='.$i }}">Page {{ $i + 1}}</a></p>
+            @endfor
+            </nav>
             @endif
         @else
             <div >

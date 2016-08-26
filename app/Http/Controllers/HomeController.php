@@ -5,7 +5,7 @@ use App\models\ArtistType;
 use App\models\SiteOptions;
 use View;
 use DB;
-
+use Gloudemans\Shoppingcart\Facades\Cart;
 class HomeController extends Controller
 {
     public function __construct(){
@@ -25,10 +25,25 @@ class HomeController extends Controller
 
         $artistHot = json_decode(json_encode($artistHot), true);
 
+        $artist['added_cart'] = false;
 
+        $artistFinal = [];
+
+        foreach($artistHot as $artist) {
+            $artistDetail = $artist;
+            $slug = $artistDetail['artist_slug'];
+            $artist['added_cart'] = false;
+            foreach(Cart::content() as $row) {
+                if($row->id == $slug){
+                    $artist['added_cart'] = true;
+                    break;
+                }
+            }
+            array_push($artistFinal, $artist);
+        }
         //get image partner
         $partner = DB::select('call SP_PARTNER_IMAGE(?);', array(20));
         $partner = json_decode(json_encode($partner), true);
-        return View::make('pages.home', ['artistTypes' => $artistTypes, 'artistHot' => $artistHot, 'partners' => $partner]);
+        return View::make('pages.home', ['artistTypes' => $artistTypes, 'artistHot' => $artistFinal, 'partners' => $partner]);
     }
 }
