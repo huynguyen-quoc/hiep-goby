@@ -833,7 +833,7 @@ u {
   display: none; }
 
 .model .not-in-wishlist {
-  display: none; }
+  display: block; }
 
 .model.wishlist .in-wishlist {
   display: block; }
@@ -848,6 +848,13 @@ u {
 .model .wishlist-toggle-wrapper .not-in-wishlist {
   background-color: rgba(0, 0, 0, 0.85);
   padding: 3% 0; }
+
+.model.active-touch .wishlist-toggle-wrapper {
+  visibility: visible;
+  opacity: 1; }
+
+.model.active-touch .wishlist-icon-wrapper {
+  background-color: rgba(175, 25, 125, 0.9); }
 
 .model .model-name-wrapper {
   text-align: center;

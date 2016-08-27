@@ -17,7 +17,7 @@
 
             @foreach($artists as $artist)
                 <div class="masonry-brick touch-item">
-                    <article class="model grid-item {{ isset($artist['added_cart']) && $artist['added_cart'] == true ? 'wishlist' : '' }}" data-artist="{{ base64_encode(json_encode($artist)) }}">
+                    <article class="model grid-item  touch-item {{ isset($artist['added_cart']) && $artist['added_cart'] == true ? 'wishlist' : '' }}" data-artist="{{ base64_encode(json_encode($artist)) }}">
                         <a href="/nghe-si/{{ $artist['artist_slug'] }}"  >
                             <div class="model-img-wrapper model-background-img-wrapper"
                                  style="background-image: url({{ asset('assets/upload/'.$artist['artist_type_slug'].'/'. $artist['artist_slug'].'/'. $artist['artist_avatar'])}})">
@@ -27,7 +27,7 @@
 
                                 <div class="wishlist-icon-wrapper in-wishlist" >
                                     <div class="">
-                                        <span class="model-is-active gobyArtIcon">D</span>
+                                        {{--<span class="model-is-active gobyArtIcon">D</span>--}}
                                         <span class="gobyArtIcon">S</span>
                                     </div>
                                 </div>
