@@ -12,6 +12,14 @@ if( $(window).width() < 800 || navigator.userAgent.match(/(iPod|iPhone|iPad)/) )
         $(".parallax").addClass("background-attachment-scroll");
     }
 
+    $(document).on('touchstart', function(event) {
+        if(event.type=='touchstart'){
+            $('html').removeClass('is-not-touch');
+            $('html').addClass('is-touch');
+            $(document).off('touchstart');
+        }
+    });
+
     var addToCart = function(e){
         e.preventDefault();
         var $this = $(this);
@@ -92,6 +100,13 @@ if( $(window).width() < 800 || navigator.userAgent.match(/(iPod|iPhone|iPad)/) )
         });
     };
 
+    var deactiveItemsInParentTouchItemScope = function(el){
+        if($('html').hasClass('is-touch')){
+            $(el).closest('.touch-item-wrapper').find('.active-touch').removeClass('active-touch');
+        }
+    };
+
+
     $(function(){
             $(".navi_mobile").slideToggle(200);
             $(".navi_mobile").on('touchmove', function(e) {
@@ -112,7 +127,7 @@ if( $(window).width() < 800 || navigator.userAgent.match(/(iPod|iPhone|iPad)/) )
                     },
                     offset : 450,
                     classes: {
-                        initial: "slide",
+                        initial: "slide--top",
                         pinned: "slide--reset",
                         unpinned: "slide--up",
                         top : "slide--top",
@@ -130,6 +145,27 @@ if( $(window).width() < 800 || navigator.userAgent.match(/(iPod|iPhone|iPad)/) )
             }
             $('.model:not(.wishlist) .wishlist-toggle-wrapper').on('click', addToCart);
             $('.model.wishlist .wishlist-toggle-wrapper').on('click', removeFromCard);
+            $('.model a').on('click', function(event){
+                var $html = $('html');
+                if($html.hasClass('is-touch')){
+                    if(event.type=='click'){
+                        var item=element.closest('.touch-item');
+                        if(item.length){
+                            if(item.hasClass('active-touch')){
+                                return true;
+                            }
+                            else{
+                                event.stopPropagation();
+                                event.preventDefault();
+                                event.stopNextHandler=true;
+                                deactiveItemsInParentTouchItemScope(item);
+                                item.addClass('active-touch');
+                                return false;
+                            }
+                        }
+                    }
+                }
+            })
 
     });
 

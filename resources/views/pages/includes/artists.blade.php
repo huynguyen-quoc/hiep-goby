@@ -12,7 +12,7 @@
                 <div class="icon-label">Loading</div>
             </div>
         </div>
-        <div class="grid-masonry grid-model-list">
+        <div class="grid-masonry grid-model-list touch-item-wrapper">
             <div class="grid-column-size"></div>
 
             @foreach($artists as $artist)

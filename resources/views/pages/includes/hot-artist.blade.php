@@ -11,7 +11,7 @@
             </div>
         </div>
         <hr class="divider">
-        <div class="grid-masonry">
+        <div class="grid-masonry touch-item-wrapper">
             <div class="grid-column-size"></div>
 
                 @foreach($artistHot as $artist)
