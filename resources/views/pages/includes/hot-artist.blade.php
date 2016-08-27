@@ -50,7 +50,7 @@
                             <div class="model-name-wrapper">
                                 <a href="#">
                                     <span class="model-name ">
-                                      Kim Ngan
+                                    {{ $artist['artist_name'] }}
                                     </span>
                                 </a>
                             </div>
@@ -62,7 +62,7 @@
         </div>
     </div>
     <div class="text-center">
-        <a class="button-more" href="/models">
+        <a class="button-more" href="/danh-sach-nghe-si">
             <span class="gobyArtIcon medium">F</span><br>See all
         </a>
     </div>
