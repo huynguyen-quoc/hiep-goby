@@ -145,11 +145,12 @@ if( $(window).width() < 800 || navigator.userAgent.match(/(iPod|iPhone|iPad)/) )
             }
             $('.model:not(.wishlist) .wishlist-toggle-wrapper').on('click', addToCart);
             $('.model.wishlist .wishlist-toggle-wrapper').on('click', removeFromCard);
-            $('.model a').on('click', function(event){
+            $('.model a').on('click touchstart', function(event){
                 var $html = $('html');
+                var $this = $(this);
                 if($html.hasClass('is-touch')){
-                    if(event.type=='click'){
-                        var item=element.closest('.touch-item');
+                    //if(event.type=='click'){
+                        var item= $this.closest('.touch-item');
                         if(item.length){
                             if(item.hasClass('active-touch')){
                                 return true;
@@ -163,7 +164,7 @@ if( $(window).width() < 800 || navigator.userAgent.match(/(iPod|iPhone|iPad)/) )
                                 return false;
                             }
                         }
-                    }
+                    //}
                 }
             })
 
