@@ -5,7 +5,7 @@
         <div class="loader-container active" >
             <div class="content">
                 <div class="gobyArtIcon spinner">S</div>
-                <div class="icon-label">Loading</div>
+                <div class="icon-label">Đang Tải</div>
             </div>
         </div>
         <div class="grid-masonry grid-model-list ">
@@ -29,7 +29,7 @@
     <div class="text-center">
         <a class="button-more" href="/models">
             <span class="gobyArtIcon medium">F</span><br>Xem Thêm
-        </a>
+    </a>
     </div>
 </div>
 @endif

@@ -60,7 +60,7 @@
             @if($totalPage > 1)
             <div class="text-center">
                 <a id="loading-more-btn" class="button-more">
-                    <span class="gobyArtIcon medium">F</span><br>Load More
+                    <span class="gobyArtIcon medium">F</span><br>Xem Thêm
                 </a>
             </div>
 
