@@ -99,6 +99,9 @@
         color: #FFFFFF;
       }
     }
+    .shopping-cart {
+      color: #FFFFFF;
+    }
   }
 
 }
@@ -150,6 +153,7 @@
   float: right;
   position: relative;
   .shopping-cart {
+    color: #000000;
     position: absolute;
     right: 1.5em;
     top: 1.5em;
