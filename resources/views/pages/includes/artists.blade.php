@@ -9,7 +9,7 @@
         <div class="loader-container active" >
             <div class="content">
                 <div class="gobyArtIcon spinner">S</div>
-                <div class="icon-label">Loading</div>
+                <div class="icon-label">Đang Tải</div>
             </div>
         </div>
         <div class="grid-masonry grid-model-list touch-item-wrapper">
