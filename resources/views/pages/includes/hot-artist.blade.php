@@ -62,7 +62,7 @@
     </div>
     <div class="text-center">
         <a class="button-more" href="/danh-sach-nghe-si/tat-ca/tat-ca">
-            <span class="gobyArtIcon medium">F</span><br>See all
+            <span class="gobyArtIcon medium">F</span><br>Xem Tất Cả
         </a>
     </div>
 </div>

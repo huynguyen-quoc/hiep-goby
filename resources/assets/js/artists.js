@@ -29,7 +29,7 @@ var ArtistPage = function(){
                 dataType : 'json',
                 loading: {
                     finished:  function(opts){
-                        $('#loading-more-btn').html(' <span class="gobyArtIcon medium">F</span><br>Load More</a>');
+                        $('#loading-more-btn').html(' <span class="gobyArtIcon medium">F</span><br>Xem Thêm</a>');
                     },
                     finishedMsg: '',
                     img: undefined,
@@ -39,7 +39,7 @@ var ArtistPage = function(){
                     speed: 'fast',
                     start:  function(opts){
                         if(totalGrid <= opts.state.currPage) return;
-                        $('#loading-more-btn').html(' <span class="gobyArtIcon medium">F</span><br>Loading...</a>');
+                        $('#loading-more-btn').html(' <span class="gobyArtIcon medium">F</span><br>Đang Tải...</a>');
                         var  path = opts.path;
                         opts.state.currPage++;
                         var  desturl = (typeof path === 'function') ? path(opts.state.currPage - 1) : path.join(opts.state.currPage - 1);

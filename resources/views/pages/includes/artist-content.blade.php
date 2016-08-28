@@ -28,7 +28,7 @@
     </div>
     <div class="text-center">
         <a class="button-more" href="/models">
-            <span class="gobyArtIcon medium">F</span><br>Load More
+            <span class="gobyArtIcon medium">F</span><br>Xem Thêm
         </a>
     </div>
 </div>
