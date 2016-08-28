@@ -14,7 +14,7 @@ class CartController extends Controller
             abort(400, 'Invalid Request');
         }
         $slug = $request->input('artist_slug');
-        $name = $request->input('artist_name');
+        $name = $request->input('artist_full_name');
 //        $fullName = $request->input('artist_full_name');
 //        $typeName = $request->input('artist_type_name');
 //        $avatar = $request->input('artist_');

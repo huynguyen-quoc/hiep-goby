@@ -21,7 +21,7 @@
                                 <div class="model-img-wrapper model-background-img-wrapper"
                                      style="background-image: url({{ asset('assets/upload/'.$artist['artist_type_slug'].'/'. $artist['artist_slug'].'/'. $artist['artist_avatar'])}})">
                                     <div class="model-name-box">
-                                        <span class="model-name" data-name="{{ $artist['artist_name'] }}"></span>
+                                        <span class="model-name" data-name="{{ $artist['artist_full_name'] }}"></span>
                                     </div>
 
                                     <div class="wishlist-icon-wrapper in-wishlist" >
@@ -34,8 +34,7 @@
                                     <div class="wishlist-toggle-wrapper">
                                         <div class="in-wishlist">
                                             <span class="icon-label s_hidden">Shortlist remove</span>
-                                            <span class="icon-label l_hidden m_hidden">Shortlist </span>
-                                            <span class="sofaIcon l_hidden m_hidden">D</span>
+                                            <span class="icon-label l_hidden m_hidden">Shortlist -</span>
                                             <span class="button-loading">Adding to cart...</span>
                                         </div>
                                         <div class="not-in-wishlist">
@@ -50,7 +49,7 @@
                             <div class="model-name-wrapper">
                                 <a href="#">
                                     <span class="model-name ">
-                                    {{ $artist['artist_name'] }}
+                                    {{ $artist['artist_full_name'] }}
                                     </span>
                                 </a>
                             </div>
@@ -62,7 +61,7 @@
         </div>
     </div>
     <div class="text-center">
-        <a class="button-more" href="/danh-sach-nghe-si">
+        <a class="button-more" href="/danh-sach-nghe-si/tat-ca/tat-ca">
             <span class="gobyArtIcon medium">F</span><br>See all
         </a>
     </div>

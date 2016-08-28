@@ -5,7 +5,12 @@ var parallaxScrollEnabled=true;
 if( $(window).width() < 800 || navigator.userAgent.match(/(iPod|iPhone|iPad)/) ){
     parallaxScrollEnabled=false;
 }
+window.hidePopover = function(event){
+    window.clearTimeout(window.showPopoverTimeout);
+    $('#model-image-popover').fadeOut(100);
+};
 (function($){
+
 
 
     if (window.parallaxScrollEnabled==false) {
@@ -36,7 +41,7 @@ if( $(window).width() < 800 || navigator.userAgent.match(/(iPod|iPhone|iPad)/) )
             data: textString,
             success: function(data){
                 $this.toggleClass('loading');
-                var cart = $('.shopping-cart');
+                var cart = $('.shopping-cart:visible');
                 var dragItem = $this.find(".button-loading");
                 $this.on('click', removeFromCard);
                 $this.closest('.model').toggleClass('wishlist');
@@ -77,6 +82,7 @@ if( $(window).width() < 800 || navigator.userAgent.match(/(iPod|iPhone|iPad)/) )
     var removeFromCard = function(e){
         e.preventDefault();
         var $this = $(this);
+        var $body = $('body');
         $this.toggleClass('loading');
         $this.off('click');
         var artist = $this.closest('article').data('artist');
@@ -91,8 +97,17 @@ if( $(window).width() < 800 || navigator.userAgent.match(/(iPod|iPhone|iPad)/) )
                 $this.toggleClass('loading');
                 var count = data['total_cart'];
                 $('.wishlist-counter').text(count);
-                $this.on('click', addToCart);
-                $this.closest('.model').toggleClass('wishlist');
+                window.hidePopover();
+                if(!$body.hasClass('wishlist')) {
+                    $this.on('click', addToCart);
+                    $this.closest('.model').toggleClass('wishlist');
+                }else{
+                    var $item = $this.closest('.masonry-brick');
+                    var $grid = $('.grid-masonry');
+                    $grid.masonry( 'remove', [$item[0]]).masonry('layout');;
+
+
+                }
             },error : function(){
                 $this.toggleClass('loading');
                 $this.on('click', removeFromCard);
@@ -106,9 +121,8 @@ if( $(window).width() < 800 || navigator.userAgent.match(/(iPod|iPhone|iPad)/) )
         }
     };
 
-
     $(function(){
-            $(".navi_mobile").slideToggle(200);
+            //$(".navi_mobile").slideToggle(200);
             $(".navi_mobile").on('touchmove', function(e) {
                 e.preventDefault();
             });
@@ -166,7 +180,11 @@ if( $(window).width() < 800 || navigator.userAgent.match(/(iPod|iPhone|iPad)/) )
                         }
                     //}
                 }
-            })
+            });
+            $('.navigation-toggle,.navi-toggle').on('click', function(e){
+                $(".navi_mobile").slideToggle(200);
+            });
+
 
     });
 

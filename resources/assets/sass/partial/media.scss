@@ -155,6 +155,14 @@
   .parallax-spacer {
     height: 250px;
   }
+
+  .navi_mobile li a {
+    padding: 1em 4%;
+    font-size: 130%;
+  }
+  .navi-toggle {
+    margin: 6% 4% 0 0;
+  }
 }
 
 @media only screen and (max-width: 1000px){

@@ -10,6 +10,7 @@
 
 .header {
   position: relative;
+  font-family: $font-family-condensed-light;
 
 }
 .page.home #dummyheader {
@@ -86,6 +87,9 @@
       -o-transition: all .5s ease-in-out;
       transition: all .5s ease-in-out;
     }
+    .wishlist-counter {
+     color: white;
+    }
     .navigation {
       & li {
         color: #FFFFFF;
@@ -97,4 +101,61 @@
     }
   }
 
+}
+
+.navi-toggle {
+  float: right;
+  margin: 3.5% 12% 0 0;
+  color: rgb(151,151,151);
+  font-size: 200%;
+}
+.navi_mobile {
+  font-family: $font-family-condensed-light;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  display: none;
+  background: #ffffff;
+  position: fixed;
+  z-index: 999;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  li {
+    font-size: 1.25em;
+    color: rgb(151,151,151);
+    border-bottom: 1px solid #9d9d9d;
+    list-style: none;
+    display: block;
+    float: none;
+    text-align: left;
+    a {
+      padding: 0.75rem 12%;
+      color: #7d7d7d;
+      display: block;
+      -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+    }
+  }
+  .navi-toggle {
+    color: #000000;
+  }
+  .navigation-mobile{
+    position: absolute;
+    right: 3.5em;
+    top :0;
+  }
+}
+
+.navigation-mobile {
+  float: right;
+  position: relative;
+  .shopping-cart {
+    position: absolute;
+    right: 1.5em;
+    top: 1.5em;
+  }
+  .wishlist-counter {
+    top: 1em;
+    left: -0.8rem;
+  }
 }

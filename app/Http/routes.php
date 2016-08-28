@@ -13,7 +13,7 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('/gioi-thieu', 'AboutController@index');
-Route::get('/danh-sach-nghe-si/{slugs?}', 'ArtistsController@index');
+Route::get('/danh-sach-nghe-si/{category}/{letter}', 'ArtistsController@index');
 Route::get('/nghe-si/{slug}', 'ArtistsController@detail');
 Route::get('/quan-tam', 'WishListController@index');
 Route::get('/lien-he', 'ContactController@index');

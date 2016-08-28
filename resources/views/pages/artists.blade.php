@@ -13,18 +13,18 @@
         <div class="content">
             <div class="artist-filter">
                 <ul>
-                    <li  class="">
-                        <a href="#">All</a>
+                    <li class="{{ Request::segment(3) == '' || Request::segment(3) == 'tat-ca' ? 'selected' : '' }}" data-value="tat-ca">
+                        <a href="{{ (Request::segment(3) != '') ? preg_replace('~/([^/]*)$~',  '/tat-ca', Request::url()) : Request::url().'/tat-ca'}}">Tất Cả</a>
                     </li>
                     @foreach ($artistFilter as $item)
-                        <li class="">
-                            <a href="#">{{$item}}</a>
+                        <li class="{{ Request::segment(3) == $item ? 'selected' : '' }}" data-value="{{$item}}">
+                            <a href="{{ (Request::segment(3) != '') ? preg_replace('~/([^/]*)$~',  '/'.strtolower($item), Request::url()) : Request::url().'/'. strtolower($item)}}">{{$item}}</a>
                         </li>
                     @endforeach
                 </ul>
             </div>
             <div class="artist-filter-type">
-                sort by <span>alphabet</span>
+                {{--sort by <span>alphabet</span>--}}
             </div>
         </div>
     </div>

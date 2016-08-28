@@ -52,7 +52,7 @@ var HomePage = function(){
                 return $(item).val();
             });
             if(data.length <= 0) return;
-            window.location.href='/danh-sach-nghe-si/' + data.join('_');
+            window.location.href='/danh-sach-nghe-si/' + data.join('_') + '/tat-ca';
         });
     };
 

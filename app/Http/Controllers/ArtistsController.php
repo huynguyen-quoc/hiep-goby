@@ -9,7 +9,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 
 class ArtistsController extends Controller
 {
-    public function index(Request $request , $category = ''){
+    public function index(Request $request , $category = '', $letter = ''){
         $filter = ["A", "B", "C", "D", "E", "F", "G", "H", "Y", "G", "K", "L", "M" ,"N", "O", "P", "Q", "S", "T", "U", "V", "W", "X", "Y" ,"Z"];
         $page = $request->input('page');
         $pageSize = 15;
@@ -19,7 +19,7 @@ class ArtistsController extends Controller
             $page = $page * $pageSize;
         }
         //get artist hot
-        $artists = DB::select('call SP_GET_ALL_ARTIST(?, ?, ?);', array(str_replace('_', ',',$category), $pageSize, $page));
+        $artists = DB::select('call SP_GET_ALL_ARTIST(?, ?, ?, ?);', array(str_replace('_', ',',$category), $letter, $pageSize, $page));
 
         $artists = json_decode(json_encode($artists), true);
         $artistFinal = [];
