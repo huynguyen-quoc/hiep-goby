@@ -26,47 +26,16 @@
 @endsection
 @section("scripts")
             <script type="text/javascript">
-                function bindInfoWindow(marker, map, title, desc, telephone, email, web, link) {
-                    var infoWindowVisible = (function () {
-                        var currentlyVisible = false;
-                        return function (visible) {
-                            if (visible !== undefined) {
-                                currentlyVisible = visible;
-                            }
-                            return currentlyVisible;
-                        };
-                    }());
-                    iw = new google.maps.InfoWindow();
-                    google.maps.event.addListener(marker, 'click', function() {
-                        if (infoWindowVisible()) {
-                            iw.close();
-                            infoWindowVisible(false);
-                        } else {
-                            var html= "<div class='infoWindow'><h4>"+title+"</h4><p>"+desc+"<p><p>"+telephone+"<p><a href='mailto:"+email+"' >"+email+"<a><br/><a href='"+link+"'' >"+web+"<a></div>";
-                            iw = new google.maps.InfoWindow({content:html});
-                            iw.open(map,marker);
-                            infoWindowVisible(true);
-                        }
-                    });
-                    google.maps.event.addListener(iw, 'closeclick', function () {
-                        infoWindowVisible(false);
-                    });
-                }
-
                 var map;
                 function initMap(){
                     var locations = [
-                        ['Goby ART', 'Goby Art là trung tâm chuyên cung cấp nhân sự tổ chức sự kiện,' +
-                        ' với một cơ sở dữ liệu khổng lồ gồm các nhân sự chuyên nghiệp trong các lĩnh vực' +
-                        ' biểu diễn nghệ thuật: ca sỹ, nhóm nhảy, nhóm múa, MC, xiếc, ban nhạc, người mẫu ... ' +
-                        'với phong cách tự tin chuyên nghiệp sẽlàm sự kiện của bạn nổi bật.', '+84 989139263',
-                            'gobyart@gobyart.vn',
-                            'www.gobyart.vn', {{ $longitude }},{{ $latitude }},
+                        ['{{ $siteOptions['SITE_NAME'] }}', '{{ $siteOptions['SITE_DESCRIPTION'] }}', '{{ $siteOptions['SITE_PHONE'] }}',
+                           '{{ $siteOptions['SITE_EMAIL_ADDRESS'] }}', '{{ $siteOptions['SITE_URL'] }}', '{{ $siteOptions['SITE_LOCATION_LONGITUDE'] }}','{{ $siteOptions['SITE_LOCATION_LATTUDE'] }}',
                             'https://mapbuildr.com/assets/img/markers/default.png']
                     ];
 
                     var mapOptions = {
-                        center: new google.maps.LatLng({{ $longitude }}, {{ $latitude }}),
+                        center: new google.maps.LatLng({{ $siteOptions['SITE_LOCATION_LONGITUDE'] }}, {{  $siteOptions['SITE_LOCATION_LATTUDE']  }}),
                         zoom: 16,
                         zoomControl: true,
                         zoomControlOptions: {
@@ -106,19 +75,12 @@
                         } else {
                             link = web;
                         }
-                        bindInfoWindow(marker, map, locations[i][0], description, telephone, email, web, link);
+                        ContactPage.bindInfoWindow(marker, map, locations[i][0], description, telephone, email, web, link);
                     }
                 }
 
                 $(function () {
-                    $('body').toggleClass('wishlist');
-
-                    $('.grid-masonry').masonry({
-                        columnWidth: '.grid-column-size',
-                        itemSelector: '.masonry-brick',
-                        percentPosition: true
-                    });
-
+                    ContactPage.initPage();
                 })
 
             </script>

@@ -111,6 +111,7 @@ elixir(function(mix) {
             'js/common.js',
             'js/artists.js',
             'js/home.js',
+            'js/contact.js',
             'js/wishlist.js',
         ],
         'public/assets/js/common.js',
