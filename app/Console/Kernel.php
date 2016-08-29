@@ -27,7 +27,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-
+        $schedule->command('gobyupdate')
+            ->everyMinute();
+        
         $schedule->call(function () {
             \Log::info('-------------SCHEDULE RUNNING------------');
             $events =  DB::select("call SP_SELECT_EVENT_EXPORT()");
@@ -129,6 +131,6 @@ class Kernel extends ConsoleKernel
                 }
             }
 
-        })->everyMinute();
+        })->cron('* * * * *');
     }
 }
