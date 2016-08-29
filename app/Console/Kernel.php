@@ -16,7 +16,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        \App\Console\Commands\Inspire::class,
+         Commands\Inspire::class,
     ];
 
     /**
@@ -27,11 +27,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('gobyupdate')
-            ->everyMinute();
-        
+
         $schedule->call(function () {
-            \Log::info('-------------SCHEDULE RUNNING------------');
             $events =  DB::select("call SP_SELECT_EVENT_EXPORT()");
             if(count($events) <= 0) return false;
             //$excel = \App::make('excel');
@@ -131,6 +128,6 @@ class Kernel extends ConsoleKernel
                 }
             }
 
-        })->cron('* * * * *');
+        })->everyMinute();
     }
 }
