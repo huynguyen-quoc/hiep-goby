@@ -106,8 +106,8 @@ class WishListController extends Controller
             } catch (\Exception $e) {
                 DB::rollback();
                print($e);
-                return \Redirect::route('quan-tam')
-                    ->with('errors', ['Có lỗi xảy ra vui lòng thử lại sau.']);
+               // return \Redirect::route('quan-tam')
+                 //   ->with('errors', ['Có lỗi xảy ra vui lòng thử lại sau.']);
                 // something went wrong
             }
 
