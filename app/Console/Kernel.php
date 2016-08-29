@@ -29,6 +29,7 @@ class Kernel extends ConsoleKernel
     {
 
         $schedule->call(function () {
+            \Log::info('-------------SCHEDULE RUNNING------------');
             $events =  DB::select("call SP_SELECT_EVENT_EXPORT()");
             if(count($events) <= 0) return false;
             //$excel = \App::make('excel');
@@ -128,6 +129,6 @@ class Kernel extends ConsoleKernel
                 }
             }
 
-        })->everyTenMinutes();
+        })->everyMinute();
     }
 }
