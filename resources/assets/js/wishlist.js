@@ -9,7 +9,7 @@ var WishListPage = function(){
         $('.loader-container').toggleClass("active");
         $('.grid-masonry').toggleClass("active");
         initGrid();
-        initAddCart();
+        initDate();
     };
 
     var initGrid = function(totalGrid){
@@ -34,6 +34,14 @@ var WishListPage = function(){
             selector: '.grid-item'
         });
     };
+
+    var initDate = function(){
+        $('input[name="event_time"]').kendoDateTimePicker(
+            {
+                format: "dd/MM/yyyy hh:mm tt"
+            }
+        );
+    }
 
     var showPopover=function(event){
         var $html = $('html');
@@ -164,11 +172,6 @@ var WishListPage = function(){
                 }
             }
         });
-    };
-
-
-    var initAddCart = function(){
-
     };
 
 

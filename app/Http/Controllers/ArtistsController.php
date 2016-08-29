@@ -29,13 +29,13 @@ class ArtistsController extends Controller
             $artistInformation = $artistDetail['artist_information'];
             $artistInformation = json_decode($artistInformation, true);
             $artistOptions1 = DB::select('call SP_GET_OPTIONS_BY_TYPE(?);', array('ARTIST_OPTIONS_1'));
-            $artistOptions1 = json_decode(json_encode($artistOptions1), true);
+//            $artistOptions1 = json_decode(json_encode($artistOptions1), true);
             $artistExtra1 = [];
             foreach ($artistOptions1 as $option) {
-                $name = $option['option_value'];
+                $name = $option->option_value;
                 if (isset($artistInformation[$name])) {
                     $artistData = array(
-                        'title' => $option['option_title'],
+                        'title' => $option->option_title,
                         'value' => $artistInformation[$name]
                     );
 
@@ -44,12 +44,11 @@ class ArtistsController extends Controller
             }
             $artistExtra2 = [];
             $artistOptions2 = DB::select('call SP_GET_OPTIONS_BY_TYPE(?);', array('ARTIST_OPTIONS_2'));
-            $artistOptions2 = json_decode(json_encode($artistOptions2), true);
             foreach ($artistOptions2 as $option) {
-                $name = $option['option_value'];
+                $name = $option->option_value;
                 if (isset($artistInformation[$name])) {
                     $artistData = array(
-                        'title' => $option['option_title'],
+                        'title' => $option->option_title,
                         'value' => $artistInformation[$name]
                     );
 

@@ -2,6 +2,7 @@
 /node_modules
 /public/storage
 /vendor
+/storage/excel/exports
 Homestead.yaml
 Homestead.json
 .env

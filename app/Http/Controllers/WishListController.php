@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\WishListFormRequest;
 use View;
 use DB;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -61,5 +62,63 @@ class WishListController extends Controller
         }
 
         return View::make('pages.wishlist', [ 'artists' => $artistFinal]);
+    }
+
+    public function create(){
+        //Get all the data and store it inside Store Variable
+        $data = \Input::all();
+
+        //Validation rules
+        $rules = array (
+            'customer_name' => 'required',
+            'event_name' => 'required',
+            'email_address' => 'required|email',
+            'event_time' => 'required|date_format:d/m/Y H:i A',
+            'event_location' => 'required',
+            'phone_number'=>'required'
+        );
+
+        //Validate data
+        $validator = \Validator::make ($data, $rules);
+
+        //If everything is correct than run passes.
+        if ($validator -> passes()){
+           // $eventName =  \Input::
+            DB::beginTransaction();
+
+            try {
+                DB::statement("call SP_EVENTS_INSERT(?, ?, ?)" ,array( $data['event_name'], $data['event_time'], $data['extra_information']));
+                $eventId = DB::select('SELECT LAST_INSERT_ID() AS ID');
+                $id = reset($eventId)->ID;
+                DB::statement("call S_INSERT_CUSTOMER(?, ?, ?)" ,array( $data['customer_name'], $data['phone_number'], $data['email_address']));
+                $customerId = DB::select('SELECT LAST_INSERT_ID() AS ID');
+                $custId = reset($customerId)->ID;
+                DB::statement("call S_INSERT_EVENT_CUSTOMER(?, ?)" ,array($custId, $id));
+                foreach (Cart::content() as $row) {
+                    DB::statement("call S_INSERT_EVENT_ARTIST(?, ?)" ,array($id, $row->id));
+                }
+                DB::commit();
+
+                return \Redirect::route('quan-tam')
+                    ->with('message', 'Thông tin của bạn đã được gửi đi. Chúng tôi sẽ liên hệ trong thời gian ngắn nh');
+
+                // all good
+            } catch (\Exception $e) {
+                DB::rollback();
+                return \Redirect::route('quan-tam')
+                    ->with('errors', ['Có lỗi xảy ra vui lòng thử lại sau.']);
+                // something went wrong
+            }
+
+
+
+            //return View::make('contact');
+        }else{
+            //return contact form with errors
+            return \Redirect::route('quan-tam')
+                ->with('errors', [$validator->getMessageBag()]);
+
+        }
+
     }
 }

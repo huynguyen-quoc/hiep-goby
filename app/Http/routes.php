@@ -15,8 +15,11 @@ Route::get('/', 'HomeController@index');
 Route::get('/gioi-thieu', 'AboutController@index');
 Route::get('/danh-sach-nghe-si/{category}/{letter}', 'ArtistsController@index');
 Route::get('/nghe-si/{slug}', 'ArtistsController@detail');
-Route::get('/quan-tam', 'WishListController@index');
+Route::get('/quan-tam',  ['as' => 'quan-tam',
+    'uses' => 'WishListController@index']);
 Route::get('/lien-he', 'ContactController@index');
+Route::post('/quan-tam','WishListController@create');
+Route::get('/test', 'ContactController@test');
 
 Route::group(['prefix' => 'api'], function () {
     Route::group(['prefix' => 'image'], function () {

@@ -39,9 +39,14 @@ gulp.task("copyfiles", function() {
 
   gulp.src("vendor/bower_dl/jquery_lazyload/jquery.lazyload.js")
     .pipe(gulp.dest("resources/assets/js/"));
+    gulp.src("vendor/bower_dl/jquery-migrate/jquery-migrate.min.js")
+        .pipe(gulp.dest("resources/assets/js/"));
   //Vendor
   gulp.src("vendor/bower_dl/iCheck/skins/**/*")
         .pipe(gulp.dest("public/assets/vendor/iCheck/skins"));
+
+  gulp.src("resources/assets/kendo/**/*")
+        .pipe(gulp.dest("public/assets/vendor/kendo"));
 
   gulp.src("vendor/bower_dl/iCheck/icheck.js")
         .pipe(gulp.dest("public/assets/vendor/iCheck"));
@@ -93,6 +98,7 @@ elixir(function(mix) {
  // Combine scripts
   	mix.scripts([
       'js/jquery.js',
+      'js/jquery-migrate.min.js',
       'js/masonry.pkgd.js',
       'js/jquery.fitvids.js',
       'js/headroom.js',
@@ -102,7 +108,14 @@ elixir(function(mix) {
       'js/jquery.hoverIntent.js',
       'js/slick.js',
       'js/jquery.infinitescroll.js',
-      'js/crypto-js.js'
+      'js/crypto-js.js',
+      'js/kendo.core.js',
+      'js/kendo.calendar.js',
+      'js/kendo.datepicker.js',
+      'js/kendo.timepicker.js',
+      'js/kendo.popup.js',
+      'js/kendo.datetimepicker.js'
+
     ],
     'public/assets/js/all.js',
     'resources/assets'

@@ -14,7 +14,11 @@
         {{--<link rel="shortcut icon" type="image/x-icon" href="_common/images_sys/favicon.ico">--}}
 
         <link href="/assets/vendor/iCheck/skins/all.css" rel="stylesheet">
+        <link href="/assets/vendor/kendo/kendo.common.css" rel="stylesheet">
+        <link href="/assets/vendor/kendo/kendo.default.css" rel="stylesheet">
+        <link href="/assets/vendor/kendo/kendo.silver.css" rel="stylesheet">
         <link href="/assets/vendor/fancybox/jquery.fancybox.css" rel="stylesheet">
+
         <link href="/assets/css/all.css" rel="stylesheet">
         @yield('styles')
 

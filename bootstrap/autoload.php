@@ -1,5 +1,5 @@
 <?php
-
+ini_set('xdebug.max_nesting_level', 200);
 define('LARAVEL_START', microtime(true));
 
 /*
@@ -32,3 +32,4 @@ $compiledPath = __DIR__.'/cache/compiled.php';
 if (file_exists($compiledPath)) {
     require $compiledPath;
 }
+
