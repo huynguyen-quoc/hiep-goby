@@ -186,6 +186,6 @@ class Kernel extends ConsoleKernel
             Log::info('************** END CSV GOOGLE DRIVE FILE ******************** ');
 
 
-        })->everyMinute();
+        })->everyTenMinutes();
     }
 }
