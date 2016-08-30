@@ -126,6 +126,7 @@ elixir(function(mix) {
             'js/home.js',
             'js/contact.js',
             'js/wishlist.js',
+            'js/about.js'
         ],
         'public/assets/js/common.js',
         'resources/assets'
