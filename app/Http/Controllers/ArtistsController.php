@@ -137,8 +137,12 @@ class ArtistsController extends Controller
                 array_push($artistExtra2, $artistData);
             }
         }
-        return View::make('pages.artist', ['imageArtist' => $imageArtist, 'videoArtist' => $videoArtist, 'artistDetail' => $artistDetail,
+        return View::make('pages.artist', [
+            'imageArtist' => $imageArtist,
+            'videoArtist' => $videoArtist,
+            'artistDetail' => $artistDetail,
             'artistExtra1' => $artistExtra1,
-            'artistExtra2' => $artistExtra2]);
+            'artistExtra2' => $artistExtra2
+        ]);
     }
 }

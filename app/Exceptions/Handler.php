@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Exception;
+use Log;
 use Illuminate\Session\TokenMismatchException;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -49,8 +50,12 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
+        Log::error('*************** ERROR RENDER DATA **************************');
+
         if ($request->wantsJson())
         {
+            Log::error('[ CODE ] '.  $e->getCode());
+            Log::error('[ RESPONSE ] '. $e->getMessage());
             // Define the response
             $response = [
                 'code' => $e->getCode(),
@@ -76,9 +81,14 @@ class Handler extends ExceptionHandler
                 $status = $e->getStatusCode();
             }
 
+
+            Log::error('***************  ERROR RENDER DATA **************************');
             // Return a JSON response with the response array and status code
             return response()->json($response, $status);
         }
+        Log::error('[ CODE ] '. $e->getCode());
+        Log::error('[ RESPONSE ] '. $e->getMessage());
+        Log::error('***************  ERROR RENDER DATA **************************');
         return parent::render($request, $e);
     }
 }

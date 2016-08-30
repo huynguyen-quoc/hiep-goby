@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Requests\WishListFormRequest;
+use Log;
 use View;
 use DB;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -83,6 +83,7 @@ class WishListController extends Controller
 
         //If everything is correct than run passes.
         if ($validator -> passes()){
+            Log::info('**************** INSERT WISH LIST  DATA ********************');
            // $eventName =  \Input::
             DB::beginTransaction();
 
@@ -98,19 +99,22 @@ class WishListController extends Controller
                     DB::statement("call S_INSERT_EVENT_ARTIST(?, ?)" ,array($id, $row->id));
                 }
                 DB::commit();
-
+                Log::info(' INSERT SUCCESS WITH EVENT ID '.$id);
+                Log::info('**************** END WISH LIST DATA ********************');
                 return \Redirect::route('quan-tam')
                     ->with('message', 'Thông tin của bạn đã được gửi đi. Chúng tôi sẽ liên hệ trong thời gian ngắn nh');
+
+
 
                 // all good
             } catch (\Exception $e) {
                 DB::rollback();
-                \Log::error('Error'.$e);
+                Log::error('[ERROR]'. $e);
+                Log::info('**************** END WISH LIST DATA ********************');
                 return \Redirect::route('quan-tam')
                     ->with('errors', ['Có lỗi xảy ra vui lòng thử lại sau.']);
-                // something went wrong
-            }
 
+            }
 
 
             //return View::make('contact');

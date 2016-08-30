@@ -15,10 +15,6 @@ class CartController extends Controller
         }
         $slug = $request->input('artist_slug');
         $name = $request->input('artist_full_name');
-//        $fullName = $request->input('artist_full_name');
-//        $typeName = $request->input('artist_type_name');
-//        $avatar = $request->input('artist_');
-//        $bodyContent = $request->getContent();
         Cart::add([
             ['id' =>  $slug, 'name' => $name, 'qty' => 1, 'price'=> 0]
         ]);

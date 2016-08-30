@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\models\ArtistType;
-use App\models\SiteOptions;
 use View;
 use DB;
+use Log;
 use Gloudemans\Shoppingcart\Facades\Cart;
 class HomeController extends Controller
 {

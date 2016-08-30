@@ -42,36 +42,38 @@ window.hidePopover = function(event){
             success: function(data){
                 $this.toggleClass('loading');
                 var cart = $('.shopping-cart:visible');
-                var dragItem = $this.find(".button-loading");
+                var dragItem = $this.find(".not-in-wishlist .button-loading");
                 $this.on('click', removeFromCard);
                 $this.closest('.model').toggleClass('wishlist');
+                var count = data['total_cart'];
+                $('.wishlist-counter').text(count);
                 if (dragItem) {
-                    var width = $this.width();
-                    var height =$this.height();
-                    var dragItemClone = dragItem.clone()
-                        .offset({
-                            top: dragItem.parent().offset().top + height / 2,
-                            left: dragItem.parent().offset().left + width / 2
-                        })
-                        .css({
-                            'position': 'absolute',
-                            'display': 'block',
-                            'z-index' : 9999
-                        })
-                        .appendTo($('body'))
-                        .animate({
-                            'top': cart.offset().top + 10,
-                            'left': cart.offset().left + 10,
-                        }, 1000);
-
-                    dragItemClone.animate({
-                        'width': 0,
-                        'height': 0
-                    }, function () {
-                        var count = data['total_cart'];
-                        $('.wishlist-counter').text(count);
-                        $(this).detach()
-                    });
+                    // var width = $this.width();
+                    // var height =$this.height();
+                    // var dragItemClone = dragItem.clone()
+                    //     .css({
+                    //         'position': 'absolute',
+                    //         'display': 'block',
+                    //         'z-index' : 9999
+                    //     })
+                    //     .appendTo($('body'))
+                    //     .offset({
+                    //         top: dragItem.parent().offset().top + height / 2,
+                    //         left: dragItem.parent().offset().left + width / 2
+                    //     })
+                    //     .animate({
+                    //         'top': cart.offset().top + 10,
+                    //         'left': cart.offset().left + 10,
+                    //     }, 1000);
+                    //
+                    // dragItemClone.animate({
+                    //     'width': 0,
+                    //     'height': 0
+                    // }, function () {
+                    //     var count = data['total_cart'];
+                    //     $('.wishlist-counter').text(count);
+                    //     $(this).detach()
+                    // });
                 }
             },error : function(){
                 $this.toggleClass('loading');
