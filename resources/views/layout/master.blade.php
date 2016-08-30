@@ -54,10 +54,10 @@
         @include('includes.footer')
         @include('includes.image-popover')
 
-        <script  type="text/javascript" src="/assets/js/all.js?v=1.0"></script>
+        <script  type="text/javascript" src="/assets/js/all.js?v=1.0.1"></script>
         <script  type="text/javascript" src="/assets/vendor/iCheck/icheck.js"></script>
         <script  type="text/javascript" src="/assets/vendor/fancybox/jquery.fancybox.pack.js"></script>
-        <script  type="text/javascript"  src="/assets/js/common.js?v=1.0"></script>
+        <script  type="text/javascript"  src="/assets/js/common.js?v=1.0.1"></script>
 
         @yield('scripts')
 
