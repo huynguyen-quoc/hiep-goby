@@ -98,6 +98,7 @@ class WishListController extends Controller
                     ->with('errors',  ['Xin hãy chọn nghệ sĩ.'])->withInput();
             }
             Log::info('**************** INSERT WISH LIST  DATA ********************');
+            Log::info($data);
            // $eventName =  \Input::
             DB::beginTransaction();
 
