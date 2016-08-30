@@ -56,6 +56,7 @@ class Handler extends ExceptionHandler
         {
             Log::error('[ CODE ] '.  $e->getCode());
             Log::error('[ RESPONSE ] '. $e->getMessage());
+            Log::error($e);
             // Define the response
             $response = [
                 'code' => $e->getCode(),
@@ -88,6 +89,7 @@ class Handler extends ExceptionHandler
         }
         Log::error('[ CODE ] '. $e->getCode());
         Log::error('[ RESPONSE ] '. $e->getMessage());
+        Log::error($e);
         Log::error('***************  ERROR RENDER DATA **************************');
         return parent::render($request, $e);
     }
