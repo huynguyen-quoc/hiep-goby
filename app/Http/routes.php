@@ -19,6 +19,8 @@ Route::get('/quan-tam',  ['as' => 'quan-tam',
     'uses' => 'WishListController@index']);
 Route::get('/lien-he', 'ContactController@index');
 Route::post('/quan-tam','WishListController@create');
+Route::get('/dang-ki-thanh-cong',  ['as' => 'dang-ki-thanh-cong',
+    'uses' => 'WishListController@result']);
 
 Route::group(['prefix' => 'api'], function () {
     Route::group(['prefix' => 'image'], function () {

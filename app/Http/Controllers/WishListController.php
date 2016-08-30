@@ -78,11 +78,25 @@ class WishListController extends Controller
             'phone_number'=>'required'
         );
 
+        $messages = array (
+            'customer_name.required' => 'Xin hãy điền tên khách hàng',
+            'event_name.required' =>  'Xin hãy điền tên sự kiện',
+            'email_address.required' =>  'Xin hãy điền  địa chỉ email ',
+            'email_address.email' =>  'Email không chính xác.',
+            'event_time.required' => 'Xin hãy điền thời gian sự kibạnện',
+            'event_location.required' => 'Xin hãy điền đỉa điểm tổ chức sự kiện',
+            'phone_number.required'=> 'Xin hãy điền số  điện thoại của '
+        );
+
         //Validate data
         $validator = \Validator::make ($data, $rules);
 
         //If everything is correct than run passes.
         if ($validator -> passes()){
+            if(count(Cart::content()) <= 0){
+                return \Redirect::route('quan-tam')
+                    ->with('errors',  ['Xin hãy chọn nghệ sĩ.'])->withInput();
+            }
             Log::info('**************** INSERT WISH LIST  DATA ********************');
            // $eventName =  \Input::
             DB::beginTransaction();
@@ -101,10 +115,9 @@ class WishListController extends Controller
                 DB::commit();
                 Log::info(' INSERT SUCCESS WITH EVENT ID '.$id);
                 Log::info('**************** END WISH LIST DATA ********************');
-                return \Redirect::route('quan-tam')
-                    ->with('message', 'Thông tin của bạn đã được gửi đi. Chúng tôi sẽ liên hệ trong thời gian ngắn nh');
+                Cart::destroy();
 
-
+                return \Redirect::route('dang-ki-thanh-cong');
 
                 // all good
             } catch (\Exception $e) {
@@ -121,9 +134,14 @@ class WishListController extends Controller
         }else{
             //return contact form with errors
             return \Redirect::route('quan-tam')
-                ->with('errors', [$validator->getMessageBag()]);
+                ->with('errors',  $validator->errors()->all())->withInput();
 
         }
 
     }
+
+    public function result(){
+        return View::make('pages.wishlist', [ 'messages' => 'CHÚC MỪNG QUÝ KHÁCH ĐÃ ĐĂNG KÝ THÀNH CÔNG. TIẾP TỤC KHÁM PHÁ THẾ GIỚI NGHỆ SĨ GOBY ART']);
+    }
+
 }
